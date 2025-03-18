@@ -18,3 +18,15 @@ class Solution:
 
 
 # Java version
+# import java.util.*;
+# class Solution {
+#     public int maxAbsoluteSum(int[] A) {
+#         int max_sum = 0, min_sum = 0, curr_sum = 0;
+#         for (int x : A) {
+#             curr_sum += x;
+#             max_sum = Math.max(max_sum, curr_sum);
+#             min_sum = Math.min(min_sum, curr_sum);
+#         }
+#         return max_sum - min_sum;
+#     }
+# }
