@@ -15,3 +15,6 @@ class Solution:
 #         return max_sum - min_sum;
 #     }
 # };
+
+
+# Java version
