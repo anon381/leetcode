@@ -37,3 +37,5 @@ class Solution:
             dp0, dp1 = dp1, (single + double) % MOD
 
         return dp1
+
+# C++ version 
