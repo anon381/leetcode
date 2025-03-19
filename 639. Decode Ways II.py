@@ -60,3 +60,19 @@ class Solution:
 # };
 
 #java version
+# import java.util.*;
+# class Solution {
+#     public int numDecodings(String s) {
+#         final int MOD = 1_000_000_007;
+#         int n = s.length();
+#         if (n == 0) return 0;
+#         long dp0 = 1, dp1 = ways1(s.charAt(0));
+#         for (int i = 1; i < n; ++i) {
+#             long single = ways1(s.charAt(i)) * dp1;
+#             long double = ways2(s.charAt(i-1), s.charAt(i)) * dp0;
+#             dp0 = dp1;
+#             dp1 = (single + double) % MOD;
+#         }
+#         return (int) dp1;
+#     }
+# };
