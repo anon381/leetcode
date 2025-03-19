@@ -2,23 +2,23 @@
 # Space Complexity: O(n), for the dp array
 class Solution:
     def peopleAwareOfSecret(self, n: int, delay: int, forget: int) -> int:
-        MOD = 10**9 + 7
-        if n == 1:
+        MOD = 10**9 + 7  # Modulo for large numbers
+        if n == 1:  # If only one day, only one person knows the secret
             return 1
-        dp = [0] * (n + 1)
-        dp[1] = 1
-        window = 0
-        for i in range(2, n + 1):
-            enter = i - delay
-            exit_ = i - forget
-            if enter >= 1:
-                window = (window + dp[enter]) % MOD
-            if exit_ >= 1:
-                window = (window - dp[exit_] + MOD) % MOD
-            dp[i] = window
-        start = max(1, n - forget + 1)
-        ans = sum(dp[start: n+1]) % MOD
-        return ans
+        dp = [0] * (n + 1)  # dp[i] = number of people who learn the secret on day i
+        dp[1] = 1  # On day 1, one person knows the secret
+        window = 0  # Sliding window to track people who can share the secret
+        for i in range(2, n + 1):  # For each day from 2 to n
+            enter = i - delay  # Day when people start sharing the secret
+            exit_ = i - forget  # Day when people forget the secret
+            if enter >= 1:  # If someone starts sharing today
+                window = (window + dp[enter]) % MOD  # Add new sharers to window
+            if exit_ >= 1:  # If someone forgets today
+                window = (window - dp[exit_] + MOD) % MOD  # Remove forgetters from window
+            dp[i] = window  # Number of people who learn the secret today
+        start = max(1, n - forget + 1)  # First day people still remember the secret
+        ans = sum(dp[start: n+1]) % MOD  # Total people who remember the secret at the end
+        return ans  # Return the answer
 
 # Function Description:
 # This function calculates the number of people who are aware of a secret after n days, given the rules for sharing and forgetting the secret.
