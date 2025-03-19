@@ -1,6 +1,9 @@
 """
 Time Complexity: O(n), where n is the length of the input array
 """
+"""
+Space Complexity: O(1), only constant extra space is used
+"""
 class Solution:
     def maxAbsoluteSum(self, A):
         return max(accumulate(A, initial=0)) - min(accumulate(A, initial=0))        
