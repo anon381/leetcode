@@ -51,3 +51,30 @@ class Solution:
 
 
 # Java version
+# import java.util.*;
+# class Solution {
+#     public int peopleAwareOfSecret(int n, int delay, int forget) {
+#         final int MOD = 1_000_000_007;
+#         if (n == 1) return 1;
+#         long[] dp = new long[n + 1];
+#         dp[1] = 1;
+#         long window = 0;
+#         for (int i = 2; i <= n; ++i) {
+#             int enter = i - delay;
+#             int exit_ = i - forget;
+#             if (enter >= 1) {
+#                 window = (window + dp[enter]) % MOD;
+#             }
+#             if (exit_ >= 1) {
+#                 window = (window - dp[exit_] + MOD) % MOD;
+#             }
+#             dp[i] = window;
+#         }
+#         int start = Math.max(1, n - forget + 1);
+#         long ans = 0;
+#         for (int i = start; i <= n; ++i) {
+#             ans = (ans + dp[i]) % MOD;
+#         }
+#         return (int) ans;
+#     }
+# };
