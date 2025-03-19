@@ -27,4 +27,42 @@ class Solution:
 
 
 
-# C++ version 
+
+# C++ version:
+# class Solution {
+# public:
+#     int uniquePathsIII(vector<vector<int>>& grid) {
+#         int m = grid.size(), n = grid[0].size();
+#         int start_i = -1, start_j = -1, empty = 0;
+#         for (int i = 0; i < m; ++i) {
+#             for (int j = 0; j < n; ++j) {
+#                 if (grid[i][j] == 1) {
+#                     start_i = i; start_j = j;
+#                 }
+#                 if (grid[i][j] == 0) ++empty;
+#             }
+#         }
+#         return backtrack(grid, start_i, start_j, empty);
+#     }
+# private:
+#     int backtrack(vector<vector<int>>& grid, int i, int j, int empty) {
+#         int m = grid.size(), n = grid[0].size(), res = 0;
+#         vector<pair<int, int>> dirs = {{-1,0},{1,0},{0,-1},{0,1}};
+#         for (auto& d : dirs) {
+#             int x = i + d.first, y = j + d.second;
+#             if (x >= 0 && x < m && y >= 0 && y < n) {
+#                 if (grid[x][y] == 0) {
+#                     grid[x][y] = -1;
+#                     --empty;
+#                     res += backtrack(grid, x, y, empty);
+#                     grid[x][y] = 0;
+#                     ++empty;
+#                 } else if (grid[x][y] == 2) {
+#                     res += empty == 0;
+#                 }
+#             }
+#         }
+#         return res;
+#     }
+# };
+
