@@ -30,7 +30,16 @@ class Solution:
 
 
 
+# Description:
+# This solution finds all unique paths from the starting square to the ending square in a grid, visiting every empty square exactly once.
+# It uses backtracking to explore all possible paths, marking squares as visited and unvisited as it recurses.
+# The function counts the number of valid paths that cover all empty squares before reaching the ending square.
+# Obstacles are skipped, and the recursion only proceeds to valid, unvisited squares.
+# The approach is efficient for small grids due to exponential time complexity, but demonstrates clear recursive logic for pathfinding.
+
+
 # C++ version:
+
 # class Solution {
 # public:
 #     int uniquePathsIII(vector<vector<int>>& grid) {
