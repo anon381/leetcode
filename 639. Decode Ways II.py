@@ -1,4 +1,5 @@
 # Time Complexity: O(n), where n is the length of s
+# Space Complexity: O(n), for the dp array
 class Solution:
     def numDecodings(self, s: str) -> int:
         MOD = 10**9 + 7
