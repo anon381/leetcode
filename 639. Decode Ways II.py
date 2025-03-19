@@ -3,6 +3,11 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
         MOD = 10**9 + 7
+    # Function Description:
+    # This function calculates the number of ways to decode a string containing digits and '*' wildcards,
+    # where '*' can represent any digit from 1 to 9. It uses dynamic programming to count valid decodings
+    # for each substring, considering both single and double character possibilities. The result is returned
+    # modulo 10^9 + 7.
 
         def ways1(ch):
             if ch == '*': return 9
