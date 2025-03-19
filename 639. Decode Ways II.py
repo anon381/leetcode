@@ -39,3 +39,22 @@ class Solution:
         return dp1
 
 # C++ version 
+# #include <string>
+# #include <vector>
+# using namespace std;
+# class Solution {
+# public:
+#     int numDecodings(string s) {
+#         const int MOD = 1e9 + 7;
+#         int n = s.size();
+#         if (n == 0) return 0;
+#         long dp0 = 1, dp1 = ways1(s[0]);
+#         for (int i = 1; i < n; ++i) {
+#             long single = ways1(s[i]) * dp1;
+#             long double = ways2(s[i-1], s[i]) * dp0;
+#             dp0 = dp1;
+#             dp1 = (single + double) % MOD;
+#         }
+#         return dp1;
+#     }
+# };
