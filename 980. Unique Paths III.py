@@ -24,3 +24,7 @@ class Solution:
                         result += count == 0
             return result
         return backtrack(start[0], start[1])
+
+
+
+# C++ version 
