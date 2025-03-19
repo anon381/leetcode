@@ -1,31 +1,32 @@
 # Time Complexity: O(4^k), where k is the number of empty squares
 # Space Complexity: O(k), for recursion stack and grid modifications
 class Solution:
+
     def uniquePathsIII(self, grid: List[List[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        start = None  
-        count = 0  
-        for i in range(m):
-            for j in range(n):
-                count += grid[i][j] == 0
-                if not start and grid[i][j] == 1:
-                    start = (i, j)
-        
+        m, n = len(grid), len(grid[0])  # Get grid dimensions
+        start = None  # Will hold the starting position
+        count = 0  # Count of empty squares to visit
+        for i in range(m):  # Iterate over each row
+            for j in range(n):  # Iterate over each column
+                count += grid[i][j] == 0  # Increment count if cell is empty
+                if not start and grid[i][j] == 1:  # If cell is the start
+                    start = (i, j)  # Save starting position
+
         def backtrack(i: int, j: int) -> int:
-            nonlocal count
-            result = 0
-            for x, y in ((i-1, j), (i+1, j), (i, j-1), (i, j+1)):
-                if 0 <= x < m and 0 <= y < n:
-                    if grid[x][y] == 0:
-                        grid[x][y] = -1
-                        count -= 1
-                        result += backtrack(x, y)
-                        grid[x][y] = 0
-                        count += 1
-                    elif grid[x][y] == 2:
-                        result += count == 0
-            return result
-        return backtrack(start[0], start[1])
+            nonlocal count  # Use the outer count variable
+            result = 0  # Number of valid paths from this cell
+            for x, y in ((i-1, j), (i+1, j), (i, j-1), (i, j+1)):  # Explore all 4 directions
+                if 0 <= x < m and 0 <= y < n:  # Check bounds
+                    if grid[x][y] == 0:  # If cell is empty
+                        grid[x][y] = -1  # Mark cell as visited
+                        count -= 1  # Decrement empty count
+                        result += backtrack(x, y)  # Recurse to next cell
+                        grid[x][y] = 0  # Unmark cell (backtrack)
+                        count += 1  # Restore empty count
+                    elif grid[x][y] == 2:  # If cell is the end
+                        result += count == 0  # Valid path only if all empty cells visited
+            return result  # Return number of valid paths from this cell
+        return backtrack(start[0], start[1])  # Start backtracking from the start position
 
 
 
