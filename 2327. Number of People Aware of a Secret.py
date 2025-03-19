@@ -20,6 +20,12 @@ class Solution:
         ans = sum(dp[start: n+1]) % MOD
         return ans
 
+# Function Description:
+# This function calculates the number of people who are aware of a secret after n days, given the rules for sharing and forgetting the secret.
+# Each person who learns the secret will start sharing it with others after 'delay' days and will forget it after 'forget' days.
+# The function uses dynamic programming to track how many people learn the secret each day, efficiently updating the count using a sliding window.
+# The final answer is the sum of people who still remember the secret at the end of n days, modulo 10^9 + 7.
+
 # C++ version 
 # #include <vector>
 # using namespace std;
