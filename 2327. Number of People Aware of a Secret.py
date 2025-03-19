@@ -1,5 +1,4 @@
 # Time Complexity: O(n), where n is the number of days
-# Time Complexity: O(n), where n is the number of days
 # Space Complexity: O(n), for the dp array
 class Solution:
     def peopleAwareOfSecret(self, n: int, delay: int, forget: int) -> int:
