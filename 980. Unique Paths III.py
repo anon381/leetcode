@@ -67,3 +67,40 @@ class Solution:
 # };
 
 # Java version:
+# import java.util.*;
+# class Solution {
+#     public int uniquePathsIII(int[][] grid) {
+#         int m = grid.length, n = grid[0].length;
+#         int start_i = -1, start_j = -1, empty = 0;
+#         for (int i = 0; i < m; ++i) {
+#             for (int j = 0; j < n; ++j) {
+#                 if (grid[i][j] == 1) {
+#                     start_i = i; start_j = j;
+#                 }
+#                 if (grid[i][j] == 0) ++empty;
+#             }
+#         }
+#         return backtrack(grid, start_i, start_j, empty);
+#     }
+#     private int backtrack(int[][] grid, int i, int j, int empty)
+#     {
+#         int m = grid.length, n = grid[0].length, res =
+#             0;
+#         int[][] dirs = {{-1,0},{1,0},{0,-1},{0,1}};
+#         for (int[] d : dirs) {
+#             int x = i + d[0], y = j + d[1];
+#             if (x >= 0 && x < m && y >= 0 && y < n) {
+#                 if (grid[x][y] == 0) {
+#                     grid[x][y] = -1;
+#                     --empty;
+#                     res += backtrack(grid, x, y, empty);
+#                     grid[x][y] = 0;
+#                     ++empty;
+#                 } else if (grid[x][y] == 2) {
+#                     res += empty == 0;
+#                 }
+#             }
+#         }
+#         return res;
+#     }
+# };
