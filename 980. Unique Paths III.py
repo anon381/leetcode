@@ -1,5 +1,4 @@
 # Time Complexity: O(4^k), where k is the number of empty squares
-# Time Complexity: O(4^k), where k is the number of empty squares
 # Space Complexity: O(k), for recursion stack and grid modifications
 class Solution:
     def uniquePathsIII(self, grid: List[List[int]]) -> int:
