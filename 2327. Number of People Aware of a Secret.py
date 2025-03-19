@@ -17,3 +17,5 @@ class Solution:
         start = max(1, n - forget + 1)
         ans = sum(dp[start: n+1]) % MOD
         return ans
+
+# C++ version 
