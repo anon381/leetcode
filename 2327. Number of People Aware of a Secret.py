@@ -1,3 +1,4 @@
+# Time Complexity: O(n), where n is the number of days
 class Solution:
     def peopleAwareOfSecret(self, n: int, delay: int, forget: int) -> int:
         MOD = 10**9 + 7
