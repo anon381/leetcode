@@ -23,3 +23,22 @@ class Solution:
 #         return count;
 #     }
 # };
+
+# Java version of the above Python code:
+#
+# import java.util.*;
+# class Solution {
+#     public int minDeletionSize(String[] A) {
+#         int count = 0;
+#         int n = A.length, m = A[0].length();
+#         for (int col = 0; col < m; ++col) {
+#             for (int row = 1; row < n; ++row) {
+#                 if (A[row].charAt(col) < A[row-1].charAt(col)) {
+#                     count++;
+#                     break;
+#                 }
+#             }
+#         }
+#         return count;
+#     }
+# }
