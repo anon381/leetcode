@@ -26,3 +26,22 @@ class Solution:
 #         return true;
 #     }
 # };
+
+# Java version of the above Python code:
+#
+# import java.util.*;
+# class Solution {
+#     public boolean isAlienSorted(String[] words, String order) {
+#         Map<Character, Integer> m = new HashMap<>();
+#         for (int i = 0; i < order.length(); ++i) m.put(order.charAt(i), i);
+#         for (int i = 1; i < words.length; ++i) {
+#             String w1 = words[i-1], w2 = words[i];
+#             int j = 0;
+#             while (j < w1.length() && j < w2.length() && w1.charAt(j) == w2.charAt(j)) ++j;
+#             if (j < w1.length() && j < w2.length()) {
+#                 if (m.get(w1.charAt(j)) > m.get(w2.charAt(j))) return false;
+#             } else if (w1.length() > w2.length()) return false;
+#         }
+#         return true;
+#     }
+# }
