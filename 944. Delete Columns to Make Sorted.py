@@ -1,3 +1,6 @@
+# Time Complexity: O(n * m), where n is the number of strings and m is the length of each string
+# Space Complexity: O(1) extra space
+
 class Solution:
     def minDeletionSize(self, A: List[str]) -> int:
         return len([True for col in zip(*A) if sorted(col) != list(col)])
