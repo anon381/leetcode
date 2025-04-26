@@ -1,3 +1,6 @@
+# Time Complexity: O(L), where L is the total number of characters in all words
+# Space Complexity: O(L) for transformed words
+
 class Solution:
     def isAlienSorted(self, words, order):
         m = {c: i for i, c in enumerate(order)}
