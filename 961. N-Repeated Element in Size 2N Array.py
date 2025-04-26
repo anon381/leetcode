@@ -1,3 +1,6 @@
+# Time Complexity: O(n), where n is the length of A
+# Space Complexity: O(n) for the set
+
 class Solution:
     def repeatedNTimes(self, A):
         while 1:
