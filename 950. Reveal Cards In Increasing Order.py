@@ -1,3 +1,6 @@
+# Time Complexity: O(n log n), where n is the number of cards (due to sorting)
+# Space Complexity: O(n) for result and indices
+
 class Solution:
     def deckRevealedIncreasing(self, deck: List[int]) -> List[int]:
         deck.sort()
