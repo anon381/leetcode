@@ -1,4 +1,6 @@
 # Time Complexity: O(m * n), where m is the length of s and n is the length of p
+# Time Complexity: O(m * n), where m is the length of s and n is the length of p
+# Space Complexity: O(m * n), for the DP table
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         m, n = len(s), len(p)
