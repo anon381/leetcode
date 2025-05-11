@@ -1,4 +1,6 @@
 # Time Complexity: O(n), where n is the number of elements in nums
+# Time Complexity: O(n), where n is the number of elements in nums
+# Space Complexity: O(n), for the hash map storing indices
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         pair_idx = {}
