@@ -18,3 +18,29 @@ class Solution:
 
 
 # in cpp
+# class Solution {
+# public:
+#     int shortestPathLength(vector<vector<int>>& graph) {
+#         int n = graph.size();
+#         queue<tuple<int, int, int>> q;
+#         for (int i = 0; i < n; i++) {
+#             q.push({1 << i, i, 0});
+#         }
+#         set<pair<int, int>> visited;
+#         while (!q.empty()) {
+#             auto [mask, node, dist] = q.front();
+#             q.pop();
+#             if (mask == (1 << n) - 1) {
+#                 return dist;
+#             }
+#             for (int neighbor : graph[node]) {
+#                 int new_mask = mask | (1 << neighbor);
+#                 if (visited.find({new_mask, neighbor}) == visited.end()) {
+#                     visited.insert({new_mask, neighbor});
+#                     q.push({new_mask, neighbor, dist + 1});
+#                 }
+#             }
+#         }
+#         return -1;
+#     }
+# };
