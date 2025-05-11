@@ -47,3 +47,30 @@ class Solution:
 
 
 # in java
+# import java.util.*;
+# class Solution {
+#     public int shortestPathLength(int[][] graph) {
+#         int n = graph.length;
+#         Queue<int[]> queue = new LinkedList<>();
+#         for (int i = 0; i < n; i++) {
+#             queue.offer(new int[]{1 << i, i, 0});
+#         }
+#         Set<String> visited = new HashSet<>();
+#         while (!queue.isEmpty()) {
+#             int[] curr = queue.poll();
+#             int mask = curr[0], node = curr[1], dist = curr[2];
+#             if (mask == (1 << n) - 1) {
+#                 return dist;
+#             }
+#             for (int neighbor : graph[node]) {
+#                 int new_mask = mask | (1 << neighbor);
+#                 String state = new_mask + "," + neighbor;
+#                 if (!visited.contains(state)) {
+#                     visited.add(state);
+#                     queue.offer(new int[]{new_mask, neighbor, dist + 1});
+#                 }
+#             }
+#         }
+#         return -1;
+#     }
+# };
