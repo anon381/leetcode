@@ -1,3 +1,4 @@
+# Time Complexity: O(N^2 * 2^N), where N is the number of nodes in the graph
 class Solution:
     def shortestPathLength(self, graph: List[List[int]]) -> int:
         n = len(graph)
