@@ -9,15 +9,24 @@ class Solution:
         visited = set((1 << i, i) for i in range(n))  
         # Track visited states (bitmask, node)
         
-        while queue:  # Continue until queue is empty
-            mask, node, dist = queue.popleft()  # Get current state: visited mask, current node, current distance
-            if mask == (1 << n) - 1:  # If all nodes have been visited (all bits set)
-                return dist  # Return the distance (shortest path length)
-            for neighbor in graph[node]:  # Check all neighbors of the current node
-                new_mask = mask | (1 << neighbor)  # Update mask to include the neighbor as visited
-                if (new_mask, neighbor) not in visited:  # If this state hasn't been visited yet
-                    visited.add((new_mask, neighbor))  # Mark state as visited
-                    queue.append((new_mask, neighbor, dist + 1))  # Add new state to queue with incremented distance
+        while queue: 
+             # Continue until queue is empty
+            mask, node, dist = queue.popleft() 
+             # Get current state: visited mask, current node, current distance
+            if mask == (1 << n) - 1:  
+                # If all nodes have been visited (all bits set)
+                return dist  
+                # Return the distance (shortest path length)
+            for neighbor in graph[node]: 
+                 # Check all neighbors of the current node
+                new_mask = mask | (1 << neighbor)  
+                # Update mask to include the neighbor as visited
+                if (new_mask, neighbor) not in visited: 
+                     # If this state hasn't been visited yet
+                    visited.add((new_mask, neighbor)) 
+                     # Mark state as visited
+                    queue.append((new_mask, neighbor, dist + 1)) 
+                     # Add new state to queue with incremented distance
 
 # Function Description:
 # This function finds the shortest path that visits all nodes in an undirected graph.
