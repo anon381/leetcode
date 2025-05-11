@@ -2,12 +2,12 @@
 # Space Complexity: O(n), for the hash map storing indices
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pair_idx = {}
+        pair_idx = {}  # Dictionary to store previously seen numbers and their indices
 
-        for i, num in enumerate(nums):
-            if target - num in pair_idx:
-                return [i, pair_idx[target - num]]
-            pair_idx[num] = i
+        for i, num in enumerate(nums):  # Loop through each number with its index
+            if target - num in pair_idx:  # Check if the complement exists in the dictionary
+                return [i, pair_idx[target - num]]  # If found, return current index and index of complement
+            pair_idx[num] = i  # Otherwise, store the current number and its index in the dictionary
 
 # Function Description:
 # This function finds two distinct indices in the list 'nums' such that the numbers at those indices add up to the given 'target'.
