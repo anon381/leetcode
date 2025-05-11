@@ -2,17 +2,25 @@
 # Space Complexity: O(m * n), for the DP table
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
-        m, n = len(s), len(p)  # Get lengths of input string and pattern
-        dp = [[False] * (n + 1) for _ in range(m + 1)]  # Initialize DP table
-        dp[0][0] = True  # Empty string matches empty pattern
+        m, n = len(s), len(p) 
+         # Get lengths of input string and pattern
+        dp = [[False] * (n + 1) for _ in range(m + 1)] 
+         # Initialize DP table
+        dp[0][0] = True  
+        # Empty string matches empty pattern
         # Handle patterns like a*, a*b*, a*b*c* that can match empty string
         for j in range(2, n + 1):
-            if p[j - 1] == '*':  # If current pattern char is '*'
-                dp[0][j] = dp[0][j - 2]  # Check if pattern without this char matches empty string
+            if p[j - 1] == '*': 
+                 # If current pattern char is '*'
+                dp[0][j] = dp[0][j - 2]  
+                # Check if pattern without this char matches empty string
         # Fill DP table for all substrings of s and p
-        for i in range(1, m + 1):  # For each character in s
-            for j in range(1, n + 1):  # For each character in p
-                if p[j - 1] == '*':  # If current pattern char is '*'
+        for i in range(1, m + 1):  
+            # For each character in s
+            for j in range(1, n + 1): 
+                 # For each character in p
+                if p[j - 1] == '*': 
+                     # If current pattern char is '*'
                     # '*' can mean zero occurrence (dp[i][j-2]) or one/more (if previous matches)
                     dp[i][j] = dp[i][j - 2] or (dp[i - 1][j] and (s[i - 1] == p[j - 2] or p[j - 2] == '.'))
                 else:
