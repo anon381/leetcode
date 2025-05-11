@@ -2,9 +2,12 @@
 # Space Complexity: O(N * 2^N), for the queue and visited set
 class Solution:
     def shortestPathLength(self, graph: List[List[int]]) -> int:
-        n = len(graph)  # Number of nodes in the graph
-        queue = deque([(1 << i, i, 0) for i in range(n)])  # Initialize BFS queue with each node as a starting point
-        visited = set((1 << i, i) for i in range(n))  # Track visited states (bitmask, node)
+        n = len(graph)  
+        # Number of nodes in the graph
+        queue = deque([(1 << i, i, 0) for i in range(n)]) 
+         # Initialize BFS queue with each node as a starting point
+        visited = set((1 << i, i) for i in range(n))  
+        # Track visited states (bitmask, node)
         
         while queue:  # Continue until queue is empty
             mask, node, dist = queue.popleft()  # Get current state: visited mask, current node, current distance
