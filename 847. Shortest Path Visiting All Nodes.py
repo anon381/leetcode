@@ -16,6 +16,14 @@ class Solution:
                     visited.add((new_mask, neighbor))
                     queue.append((new_mask, neighbor, dist + 1))
 
+# Function Description:
+# This function finds the shortest path that visits all nodes in an undirected graph.
+# It uses a breadth-first search (BFS) approach, where each state is represented by a bitmask
+# indicating which nodes have been visited, the current node, and the current path length.
+# The queue stores all possible states, and the visited set ensures that each state is processed only once.
+# The algorithm starts BFS from every node, and the search continues until all nodes have been visited
+# (i.e., the bitmask has all bits set). The function returns the minimum number of steps required to visit all nodes.
+
 
 # in cpp
 # class Solution {
