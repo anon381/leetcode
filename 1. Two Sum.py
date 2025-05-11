@@ -15,3 +15,6 @@ class Solution:
             #     }
             #     pair_idx[nums[i]] = i;
             # }
+
+
+            #in java
