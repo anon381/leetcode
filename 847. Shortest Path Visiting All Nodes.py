@@ -15,3 +15,6 @@ class Solution:
                 if (new_mask, neighbor) not in visited:
                     visited.add((new_mask, neighbor))
                     queue.append((new_mask, neighbor, dist + 1))
+
+
+# in cpp
