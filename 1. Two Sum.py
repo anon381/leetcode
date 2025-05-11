@@ -6,3 +6,5 @@ class Solution:
             if target - num in pair_idx:
                 return [i, pair_idx[target - num]]
             pair_idx[num] = i
+
+            #in cpp
