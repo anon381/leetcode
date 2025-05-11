@@ -2,19 +2,19 @@
 # Space Complexity: O(N * 2^N), for the queue and visited set
 class Solution:
     def shortestPathLength(self, graph: List[List[int]]) -> int:
-        n = len(graph)
-        queue = deque([(1 << i, i, 0) for i in range(n)])
-        visited = set((1 << i, i) for i in range(n))
+        n = len(graph)  # Number of nodes in the graph
+        queue = deque([(1 << i, i, 0) for i in range(n)])  # Initialize BFS queue with each node as a starting point
+        visited = set((1 << i, i) for i in range(n))  # Track visited states (bitmask, node)
         
-        while queue:
-            mask, node, dist = queue.popleft()
-            if mask == (1 << n) - 1:
-                return dist
-            for neighbor in graph[node]:
-                new_mask = mask | (1 << neighbor)
-                if (new_mask, neighbor) not in visited:
-                    visited.add((new_mask, neighbor))
-                    queue.append((new_mask, neighbor, dist + 1))
+        while queue:  # Continue until queue is empty
+            mask, node, dist = queue.popleft()  # Get current state: visited mask, current node, current distance
+            if mask == (1 << n) - 1:  # If all nodes have been visited (all bits set)
+                return dist  # Return the distance (shortest path length)
+            for neighbor in graph[node]:  # Check all neighbors of the current node
+                new_mask = mask | (1 << neighbor)  # Update mask to include the neighbor as visited
+                if (new_mask, neighbor) not in visited:  # If this state hasn't been visited yet
+                    visited.add((new_mask, neighbor))  # Mark state as visited
+                    queue.append((new_mask, neighbor, dist + 1))  # Add new state to queue with incremented distance
 
 # Function Description:
 # This function finds the shortest path that visits all nodes in an undirected graph.
