@@ -16,6 +16,13 @@ class Solution:
                     dp[i][j] = dp[i - 1][j - 1] and (s[i - 1] == p[j - 1] or p[j - 1] == '.')
         return dp[m][n]
 
+# Function Description:
+# This function implements regular expression matching with support for '.' and '*'.
+# It uses dynamic programming to build a table where dp[i][j] indicates whether the first i characters of string s
+# match the first j characters of pattern p. The function handles the '*' character by considering zero or more
+# occurrences of the preceding element, and the '.' character as a wildcard that matches any single character.
+# The final result is whether the entire string matches the pattern.
+
 # in cpp:
 # class Solution {
 # public:
