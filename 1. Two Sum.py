@@ -9,6 +9,11 @@ class Solution:
                 return [i, pair_idx[target - num]]
             pair_idx[num] = i
 
+# Function Description:
+# This function finds two distinct indices in the list 'nums' such that the numbers at those indices add up to the given 'target'.
+# It uses a hash map to store previously seen numbers and their indices, allowing for efficient lookup of the complement (target - num).
+# When a valid pair is found, their indices are returned as a list.
+
             #in cpp
             # unordered_map<int, int> pair_idx;
             # for (int i = 0; i < nums.size(); ++i) {
