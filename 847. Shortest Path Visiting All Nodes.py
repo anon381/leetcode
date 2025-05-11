@@ -1,4 +1,5 @@
 # Time Complexity: O(N^2 * 2^N), where N is the number of nodes in the graph
+# Space Complexity: O(N * 2^N), for the queue and visited set
 class Solution:
     def shortestPathLength(self, graph: List[List[int]]) -> int:
         n = len(graph)
