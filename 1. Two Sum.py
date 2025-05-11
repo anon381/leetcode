@@ -1,3 +1,4 @@
+# Time Complexity: O(n), where n is the number of elements in nums
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         pair_idx = {}
@@ -31,4 +32,3 @@ class Solution:
             #         throw new IllegalArgumentException("No two sum solution");
             #     }
             # }
-        
