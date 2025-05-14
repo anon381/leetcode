@@ -10,3 +10,26 @@ class Solution:
             arr[index] = value_to_rank[arr[index]]
 
         return arr
+
+# C++ version of the above Python code:
+#
+# #include <vector>
+# #include <algorithm>
+# #include <unordered_map>
+# using namespace std;
+# class Solution {
+# public:
+#     vector<int> arrayRankTransform(vector<int>& arr) {
+#         vector<int> sorted = arr;
+#         sort(sorted.begin(), sorted.end());
+#         sorted.erase(unique(sorted.begin(), sorted.end()), sorted.end());
+#         unordered_map<int, int> valueToRank;
+#         for (int i = 0; i < sorted.size(); ++i) {
+#             valueToRank[sorted[i]] = i + 1;
+#         }
+#         for (int& num : arr) {
+#             num = valueToRank[num];
+#         }
+#         return arr;
+#     }
+# };
