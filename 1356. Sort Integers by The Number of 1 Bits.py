@@ -7,3 +7,28 @@ class Solution:
         arr.sort(key=custom_sort_key)
 
         return arr
+
+# C++ version of the above Python code:
+#
+# #include <vector>
+# #include <algorithm>
+# using namespace std;
+# class Solution {
+# public:
+#     vector<int> sortByBits(vector<int>& arr) {
+#         auto bitCount = [](int num) {
+#             int count = 0;
+#             while (num) {
+#                 count += num & 1;
+#                 num >>= 1;
+#             }
+#             return count;
+#         };
+#         sort(arr.begin(), arr.end(), [&](int a, int b) {
+#             int ba = bitCount(a), bb = bitCount(b);
+#             return ba == bb ? a < b : ba < bb;
+#         });
+#         return arr;
+#     }
+# };
+#
