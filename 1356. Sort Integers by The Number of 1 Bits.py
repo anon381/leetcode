@@ -32,3 +32,20 @@ class Solution:
 #     }
 # };
 #
+# Java version of the above Python code:
+#
+# import java.util.*;
+# class Solution {
+#     public int[] sortByBits(int[] arr) {
+#         Integer[] boxed = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+#         Arrays.sort(boxed, (a, b) -> {
+#             int ba = Integer.bitCount(a), bb = Integer.bitCount(b);
+#             return ba == bb ? a - b : ba - bb;
+#         });
+#         for (int i = 0; i < arr.length; i++) {
+#             arr[i] = boxed[i];
+#         }
+#         return arr;
+#     }
+# }
+#
