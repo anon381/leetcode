@@ -35,4 +35,24 @@ class Solution:
 #     }
 # };
 
+# Java version of the above Python code:
+#
+# import java.util.*;
+# class Solution {
+#     public int findTheDistanceValue(int[] arr1, int[] arr2, int d) {
+#         Arrays.sort(arr2);
+#         int count = 0;
+#         for (int num : arr1) {
+#             int left = Arrays.binarySearch(arr2, num - d);
+#             int right = Arrays.binarySearch(arr2, num + d);
+#             left = left < 0 ? -(left + 1) : left;
+#             right = right < 0 ? -(right + 1) : right + 1;
+#             if (left == right) {
+#                 count++;
+#             }
+#         }
+#         return count;
+#     }
+# }
+
 
