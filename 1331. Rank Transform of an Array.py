@@ -1,3 +1,6 @@
+# Time Complexity: O(n log n), where n is the length of arr (due to sorting and mapping)
+# Space Complexity: O(n) for the map and sorted array
+
 class Solution:
     def arrayRankTransform(self, arr: List[int]) -> List[int]:
         value_to_rank = {}  
