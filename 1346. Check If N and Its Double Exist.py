@@ -1,3 +1,6 @@
+# Time Complexity: O(n), where n is the length of arr
+# Space Complexity: O(n) for the set
+
 class Solution:
     def checkIfExist(self, arr: List[int]) -> bool:
         seen = {}  
