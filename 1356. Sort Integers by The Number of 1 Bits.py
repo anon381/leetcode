@@ -1,3 +1,6 @@
+# Time Complexity: O(n log n), where n is the length of arr (due to sorting)
+# Space Complexity: O(1) extra space (in-place sort)
+
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
         def custom_sort_key(num):
