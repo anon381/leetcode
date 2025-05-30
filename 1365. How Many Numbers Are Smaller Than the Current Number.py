@@ -1,3 +1,6 @@
+# Time Complexity: O(n log n), where n is the length of nums (due to sorting)
+# Space Complexity: O(n) for the map and temp array
+
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         temp = sorted(nums)
