@@ -1,3 +1,6 @@
+# Time Complexity: O(n log m), where n is len(arr1) and m is len(arr2) (due to binary search for each element)
+# Space Complexity: O(1) extra space (in-place sort)
+
 class Solution:
     def findTheDistanceValue(self, arr1: List[int], arr2: List[int], d: int) -> int:
         arr2.sort()
