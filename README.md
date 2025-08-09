@@ -1,4 +1,4 @@
-# LeetCode Solutions (Python)
+# LeetCode Solutions (Python-3)
 
 This repository contains my Python solutions to [LeetCode](https://leetcode.com/) problems.  
 I'm committing them here as I practice and track my problem-solving progress.
