@@ -9,6 +9,7 @@ class Solution:
             if diff < lowest:
                 lowest = diff
         return lowest
+        
 ## or 
 
  class Solution:
@@ -21,6 +22,3 @@ class Solution:
             diff = abs(nums[i]- nums[i+k-1])
             min_diff = min(min_diff, diff)
         return min_diff
-
-            
-        
