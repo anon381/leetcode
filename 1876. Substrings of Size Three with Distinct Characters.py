@@ -1,4 +1,3 @@
-
 class Solution:
     def countGoodSubstrings(self, s: str) -> int:
         cnt = 0
