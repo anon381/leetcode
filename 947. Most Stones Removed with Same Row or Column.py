@@ -1,4 +1,6 @@
 
+from typing import List
+
 class Solution:
     def __init__(self):
         self.component_count = 0
