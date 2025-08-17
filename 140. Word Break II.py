@@ -1,5 +1,7 @@
 from typing import List
 
+from collections import defaultdict
+
 def helper(s, word_map, memo):
     if s in memo:
         return memo[s]
