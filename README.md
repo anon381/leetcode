@@ -8,6 +8,15 @@ I'm committing them here as I practice and track my problem-solving progress.
 - Goal: Improve algorithms & data structure skills
 - Style: Clean, readable, and efficient solutions when possible
 
+## 📖 Topics Covered
+
+- Arrays & Strings  
+- Hashing & Prefix Sums  
+- Recursion & Backtracking  
+- Dynamic Programming  
+- Binary Trees & Graphs  
+- Greedy ,Divide & Conquer 
+
 ## 🗂 Structure
 Files are named after the problem ID and title:
 
