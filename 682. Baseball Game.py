@@ -10,5 +10,5 @@ class Solution:
                 elif operations[i] == "D":
                     res.append(res[-1] * 2)
                 elif operations[i] == "C":
-                    res.pop()  # pop is way quicker here than del
+                    res.pop()  
         return sum(res)
