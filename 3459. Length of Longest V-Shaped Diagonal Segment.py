@@ -40,3 +40,4 @@ class Solution:
                             t+=d[dir+1]
         return ans
               
+#in cpp
