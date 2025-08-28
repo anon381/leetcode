@@ -15,3 +15,20 @@ class Solution:
 #         return x == 0 && y == 0;
 #     }
 # }
+
+
+# in cpp
+# class Solution {
+# public:
+#     bool judgeCircle(string moves) {
+#         int cntR=0;int cntL=0;int cntU=0;int cntD=0;
+#         for(int i=0;i<moves.size();i++){
+#          if(moves[i]=='L') cntL++;
+#          if(moves[i]=='R') cntR++;
+#          if(moves[i]=='U') cntU++;
+#          if(moves[i]=='D') cntD++;
+#         }
+#         if(cntL==cntR && cntU==cntD) return true;
+#         return false;
+#     }
+# };
