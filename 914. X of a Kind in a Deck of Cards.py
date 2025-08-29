@@ -7,6 +7,8 @@ class Solution:
             return reduce(gcd, count) > 1
 
 
+
+
 #in cpp
     # bool hasGroupsSizeX(vector<int>& deck) {
     #     unordered_map<int, int> count;
@@ -15,6 +17,9 @@ class Solution:
     #     for (auto i : count) res = __gcd(i.second, res);
     #     return res > 1;
     # }
+
+
+
 
 # in java 
     # public boolean hasGroupsSizeX(int[] deck) {
