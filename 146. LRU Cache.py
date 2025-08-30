@@ -119,7 +119,6 @@ class LRUCache:
 #         }
 #     }
 
-#     // Destructor to release memory used by the nodes
 #     ~LRUCache() {
 #         Node* curr = oldest;
 #         while (curr != nullptr) {
