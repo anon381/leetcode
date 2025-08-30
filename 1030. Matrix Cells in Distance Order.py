@@ -47,3 +47,34 @@ class Solution:
 #         return result;
 #     }
 # };
+
+
+
+
+#in java
+# class Solution {
+#     public int[][] allCellsDistOrder(int rows, int cols, int rCenter, int cCenter) {
+#         Queue<int[]> bfsQ = new LinkedList();
+#         int[][] result = new int[rows * cols][];
+#         int resultIdx = 0;
+#         bfsQ.add(new int[] { rCenter, cCenter });
+#         boolean[][] visited = new boolean[rows][cols];
+#         visited[rCenter][cCenter] = true;
+#         final int[][] dirs = { { 0, +1 }, { 0, -1 }, { +1, 0 }, { -1, 0 } };
+
+#         while (!bfsQ.isEmpty()) {
+#             int[] cell = bfsQ.poll();
+#             result[resultIdx++] = cell;
+#             for (int[] deltas : dirs) {
+#                 int r = cell[0] + deltas[0];
+#                 int c = cell[1] + deltas[1];
+#                 if (r >= 0 && r < rows && c >= 0 && c < cols && !visited[r][c]) {
+#                     visited[r][c] = true;
+#                     bfsQ.add(new int[] { r, c });
+#                 }
+#             }
+#         }
+#         return result;
+#     }
+# }
+
