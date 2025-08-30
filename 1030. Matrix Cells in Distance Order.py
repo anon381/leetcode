@@ -16,3 +16,34 @@ class Solution:
                     visited[r][c] = True
                     bfsQ.append([r, c])
         return result
+
+
+
+#in cpp
+# class Solution {
+# public:
+#     vector<vector<int>> allCellsDistOrder(int rows, int cols, int rCenter, int cCenter) {
+#         queue<vector<int>> bfsQ;
+#         bfsQ.push({rCenter, cCenter});
+#         vector<vector<int>> result;
+#         vector<vector<bool>> visited(rows, vector<bool>(cols));
+#         visited[rCenter][cCenter] = true;
+#         const vector<vector<int>> dirs = {{0, +1}, {0, -1}, {+1, 0}, {-1, 0}};
+
+#         while (bfsQ.size()) {
+#             vector<int> cell = bfsQ.front();
+#             bfsQ.pop();
+#             result.push_back(cell);
+#             for (vector<int> deltas : dirs) {
+#                 int r = cell[0] + deltas[0];
+#                 int c = cell[1] + deltas[1];
+#                 if (r >= 0 && r < rows && c >= 0 && c < cols &&
+#                     !visited[r][c]) {
+#                     visited[r][c] = true;
+#                     bfsQ.push({r, c});
+#                 }
+#             }
+#         }
+#         return result;
+#     }
+# };
