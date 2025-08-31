@@ -1,4 +1,8 @@
-
+"""
+Complexity Analysis:
+    - Time Complexity: O(n)
+    - Space Complexity: O(1)
+"""
 
 class Solution:
     def validMountainArray(self, arr: List[int]) -> bool:
