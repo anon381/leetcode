@@ -17,3 +17,31 @@ class Solution:
         while i + 1 < n and arr[i] > arr[i + 1]:
             i += 1
         return i == n - 1
+
+
+
+
+# in cpp
+# class Solution {
+# public:
+#     bool validMountainArray(vector<int>& arr) {
+#         int length = arr.size();
+#         int counter = 0; 
+#         for (int i = 0; i < length - 1; i++) {
+#             if (counter == 0) {
+#                 if (arr[i] > arr[i + 1]) {     
+#                     counter = 1;
+#                 } else if (arr[i] == arr[i + 1]) {
+#                     return false;             
+#                 }
+#             }
+#             if (counter == 1) {
+#                 if (arr[i] <= arr[i + 1])
+#                     return false;              
+#             }
+#         }
+#         if (length > 1 && arr[0] > arr[1])
+#             return false;                      
+#         return counter == 1;                  
+#     }
+# };
