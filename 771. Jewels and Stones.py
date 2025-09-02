@@ -1,3 +1,7 @@
+
+# Time Complexity: O(J + S)
+# Space Complexity: O(J)
+
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         jewel_set = set(jewels)
