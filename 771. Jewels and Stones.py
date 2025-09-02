@@ -6,3 +6,9 @@ class Solution:
             if stone in jewel_set:
                 count += 1
         return count
+
+
+
+
+
+#in cpp
