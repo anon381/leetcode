@@ -47,26 +47,27 @@ class Solution(object):
 
 
 
-class Solution {
-public:
-    string reverseOnlyLetters(string s) {
-        int length = s.length();
-        int left = 0, right = length - 1;
-        string answer = "";
-                while (left < length) {
-            if (isalpha(s[left]) && isalpha(s[right])) {
-                answer += s[right];
-                left++;
-                right--;
-            }
-            else if (!isalpha(s[left])) {
-                answer += s[left];
-                left++;
-            }
-            else {
-                right--;
-            }
-        }
-        return answer;
-    }
-};
+#  in cpp
+# class Solution {
+# public:
+#     string reverseOnlyLetters(string s) {
+#         int length = s.length();
+#         int left = 0, right = length - 1;
+#         string answer = "";
+#                 while (left < length) {
+#             if (isalpha(s[left]) && isalpha(s[right])) {
+#                 answer += s[right];
+#                 left++;
+#                 right--;
+#             }
+#             else if (!isalpha(s[left])) {
+#                 answer += s[left];
+#                 left++;
+#             }
+#             else {
+#                 right--;
+#             }
+#         }
+#         return answer;
+#     }
+# };
