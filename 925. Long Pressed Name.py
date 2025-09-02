@@ -20,3 +20,7 @@ class Solution:
             j += 1
             
         return i == len(name)
+
+
+
+# in cpp
