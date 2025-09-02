@@ -15,3 +15,6 @@ class Solution:
 #         return (s + s).find(goal) != string::npos;
 #     }
 # };
+
+
+#in java
