@@ -14,7 +14,7 @@ class Solution:
         return " ".join(x for x in new) 
 
 
-#in jvava
+#in java
 # class Solution {
 #     public String toGoatLatin(String sentence) {
 #         String[] words = sentence.split(" ");
