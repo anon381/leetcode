@@ -29,3 +29,7 @@ class Solution:
 #         return count;
 #     }
 # };
+
+
+#in java
+
