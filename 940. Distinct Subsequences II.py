@@ -1,3 +1,10 @@
+# Complexity
+# Time complexity:
+# O(n)
+
+# Space complexity:
+# O(n)
+
 class Solution:
     def distinctSubseqII(self, s: str) -> int:
         n=len(s)
