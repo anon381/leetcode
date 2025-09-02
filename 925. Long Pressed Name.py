@@ -45,3 +45,6 @@ class Solution:
 #         return i == name.size();
 #     }
 # };
+
+
+# in java
