@@ -47,3 +47,26 @@ class Solution:
 
 
 #in java
+class Solution {
+    int q = 1000000007;
+    public int distinctSubseqII(String s) {
+        int[] hash = new int[26]; 
+        Arrays.fill(hash,-1); 
+        int[] arr = new int[s.length()+1];
+        arr[0]=1;
+        for(int i=0;i<s.length();i++){
+            if(hash[s.charAt(i)-'a']==-1){
+                arr[i+1]=(arr[i]+arr[i])%q;
+                hash[s.charAt(i)-'a']=i;
+            }else{
+                arr[i+1]=(arr[i]+arr[i])%q;
+                arr[i+1]-=arr[hash[s.charAt(i)-'a']];
+                if(arr[i+1]<0){
+                    arr[i+1]+=q;
+                }
+                hash[s.charAt(i)-'a']=i;
+            }
+        }
+        return arr[arr.length-1]-1<0?arr[arr.length-1]-1+q:arr[arr.length-1]-1;
+    }
+}
