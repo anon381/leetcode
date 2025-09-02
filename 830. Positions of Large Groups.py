@@ -9,3 +9,6 @@ class Solution:
                     return_list.append([left, index - 1])
                 left = index
         return return_list
+
+
+#in cpp
