@@ -12,3 +12,20 @@ class Solution:
 
 
 #in cpp
+# #include <unordered_set>
+# #include <string>
+# using namespace std;
+
+# class Solution {
+# public:
+#     int numJewelsInStones(string jewels, string stones) {
+#         unordered_set<char> jewelSet(jewels.begin(), jewels.end());
+#         int count = 0;
+#         for (char s : stones) {
+#             if (jewelSet.count(s)) {
+#                 count++;
+#             }
+#         }
+#         return count;
+#     }
+# };
