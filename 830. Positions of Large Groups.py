@@ -26,3 +26,6 @@ class Solution:
 #         return res;
 #     }
 # };
+
+
+#in java
