@@ -1,3 +1,8 @@
+
+# Sorting	O(n log n)	O(1)
+# Pair sweeping	O(n²)	O(1)
+# Total	O(n²)	O(1)
+
 class Solution:
     def numberOfPairs(self, P: List[List[int]]) -> int:
         P.sort(key=lambda p: (-p[0], p[1]))
