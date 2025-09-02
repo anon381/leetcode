@@ -5,3 +5,4 @@ class Solution:
         return goal in s + s
 
 
+#in cpp
