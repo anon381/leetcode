@@ -17,7 +17,7 @@ class Solution:
 # class Solution {
 # public:
 #     static bool cmp(vector<int>& p, vector<int>& q){
-#         return (p[0]==q[0])?p[1]<q[1]:p[0]>q[0];// order by (x, >)
+#         return (p[0]==q[0])?p[1]<q[1]:p[0]>q[0];
 #     }
 
 #     int numberOfPairs(vector<vector<int>>& P) {
