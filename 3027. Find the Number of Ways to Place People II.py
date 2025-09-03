@@ -12,3 +12,4 @@ class Solution:
                     if yi==yj: break
         return ans
         
+# in cpp
