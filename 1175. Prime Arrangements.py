@@ -42,3 +42,33 @@ class Solution:
 #     }
 # };
 
+
+
+#java version 
+# class Solution {
+#     public int numPrimeArrangements(int n) {
+#         final int MOD = 1_000_000_007;
+
+#         // List of primes up to 100
+#         int[] primesList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+#                             31, 37, 41, 43, 47, 53, 59, 61, 67,
+#                             71, 73, 79, 83, 89, 97};
+
+#         // Count how many primes <= n
+#         int primeCount = 0;
+#         for (int p : primesList) {
+#             if (p <= n) primeCount++;
+#         }
+#         // Factorial with modulo
+#         long factPrime = factorial(primeCount, MOD);
+#         long factNonPrime = factorial(n - primeCount, MOD);
+#         return (int)((factPrime * factNonPrime) % MOD);
+#     }
+#     private long factorial(int k, int MOD) {
+#         long res = 1;
+#         for (int i = 2; i <= k; i++) {
+#             res = (res * i) % MOD;
+#         }
+#         return res;
+#     }
+# }
