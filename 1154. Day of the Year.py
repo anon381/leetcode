@@ -1,3 +1,7 @@
+# Complexity
+# time complexity = O(1) 
+# space complexity = O(1)
+
 class Solution:
     def dayOfYear(self, date: str) -> int:
         
