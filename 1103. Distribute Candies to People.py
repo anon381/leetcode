@@ -14,3 +14,15 @@ class Solution:
 
 
 # c++ version
+# class Solution {
+# public:
+#     vector<int> distributeCandies(int candies, int num_people) {
+#         vector<int> result(num_people);
+#         for (int give = 1, i = 0; candies > 0; ++i , ++give){
+#             if(i == num_people) i = 0;
+#             result[i] += min(give , candies);
+#             candies -= give;
+#         }
+#         return result;
+#     }
+# };
