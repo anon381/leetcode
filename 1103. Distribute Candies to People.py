@@ -1,3 +1,10 @@
+# Complexity
+# Time complexity:
+# O(n)
+
+# Space complexity:
+# O(1) 
+
 class Solution:
     def distributeCandies(self, candies: int, num_people: int) -> List[int]:
         ans = [0] * num_people
