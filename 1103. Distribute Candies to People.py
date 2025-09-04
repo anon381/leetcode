@@ -26,3 +26,7 @@ class Solution:
 #         return result;
 #     }
 # };
+
+
+
+#java version
