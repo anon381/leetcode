@@ -11,3 +11,7 @@ class Solution:
             day+=1
 
         return list_year[month-1]+day
+
+
+        
+#c++ version
