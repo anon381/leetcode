@@ -7,3 +7,5 @@ class Solution:
             if k >= x.bit_count():
                 return k
         return -1
+
+#in cpp
