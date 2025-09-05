@@ -1,3 +1,7 @@
+# Time Complexity: O(60)=O(1)
+# Space Complexity: O(1)
+
+
 class Solution:
     def makeTheIntegerZero(self, num1: int, num2: int) -> int:
         for k in range(1, 61):
