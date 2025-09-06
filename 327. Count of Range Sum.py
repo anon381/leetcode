@@ -1,3 +1,9 @@
+# Complexity
+
+# Time: O(n log n) (merge sort + counting).
+
+# Space: O(n) (prefix sums + recursion stack).
+
 class Solution:
     def countRangeSum(self, nums, lower, upper):
         prefix = [0]
