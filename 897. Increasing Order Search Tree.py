@@ -19,3 +19,29 @@ class Solution:
 
 
 #in cpp
+
+# class Solution {
+# public:
+#     TreeNode* increasingBST(TreeNode* node) {
+#         TreeNode dummy(0);
+#         TreeNode* tail = &dummy;
+
+#         while (node != nullptr) {
+#             if (node->left != nullptr) {
+#                 TreeNode* predecessor = node->left;
+#                 while (predecessor->right != nullptr) {
+#                     predecessor = predecessor->right;
+#                 }
+#                 predecessor->right = node;
+#                 TreeNode* left = node->left;
+#                 node->left = nullptr;
+#                 node = left;
+#             } else {
+#                 tail->right = node;
+#                 tail = node;
+#                 node = node->right;
+#             }
+#         }
+#         return dummy.right;
+#     }
+# };
