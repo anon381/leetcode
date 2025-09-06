@@ -6,3 +6,6 @@ class Solution:
                 A[stack.pop()] -= a
             stack.append(i)
         return A        
+
+
+#in c++
