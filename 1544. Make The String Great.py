@@ -1,3 +1,10 @@
+# Complexity
+# Time complexity:
+# O(n)
+
+# Space complexity:
+# extra: O(1)
+
 class Solution:
     def makeGood(self, s: str) -> str:
         n=len(s)
