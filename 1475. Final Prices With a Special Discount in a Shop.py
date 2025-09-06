@@ -23,3 +23,8 @@ class Solution:
 #         return A;
 #     }
 # };
+
+
+
+
+#in java
