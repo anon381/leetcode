@@ -57,9 +57,12 @@ class Solution:
 #             while (j < hi && prefix[j] - prefix[i] <= upper) j++;
 #             count += j - k;
 #         }
-
 #         inplace_merge(prefix.begin() + lo, prefix.begin() + mid, prefix.begin() + hi);
 #         return count;
 #     }
 # };
 
+
+
+
+#in java
