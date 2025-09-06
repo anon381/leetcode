@@ -20,3 +20,6 @@ class Solution:
             op+=(expSum(r)-expSum(l1-1)+1)>>1
 
         return op
+
+
+# in cpp
