@@ -1,3 +1,10 @@
+# Complexity
+# Time complexity:
+# O(n)
+
+# Space complexity:
+# O(18)
+
 class Solution:
     def minOperations(self, queries: List[List[int]]) -> int:
         expSum4=[1]+[0]*17
