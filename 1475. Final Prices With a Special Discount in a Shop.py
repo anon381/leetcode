@@ -1,3 +1,7 @@
+# Complexity
+# Time O(N)
+# Space O(N)
+
 class Solution:
     def finalPrices(self, A):
         stack = []
