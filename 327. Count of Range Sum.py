@@ -66,3 +66,32 @@ class Solution:
 
 
 #in java
+# import java.util.*;
+
+# class Solution {
+#     public int countRangeSum(int[] nums, int lower, int upper) {
+#         long[] prefix = new long[nums.length + 1];
+#         for (int i = 0; i < nums.length; i++) {
+#             prefix[i + 1] = prefix[i] + nums[i];
+#         }
+#         return mergeSort(prefix, 0, nums.length + 1, lower, upper);
+#     }
+
+#     private int mergeSort(long[] prefix, int lo, int hi, int lower, int upper) {
+#         if (hi - lo <= 1) return 0;
+#         int mid = (lo + hi) / 2;
+#         int count = mergeSort(prefix, lo, mid, lower, upper) +
+#                     mergeSort(prefix, mid, hi, lower, upper);
+
+#         int j = mid, k = mid;
+#         for (int i = lo; i < mid; i++) {
+#             while (k < hi && prefix[k] - prefix[i] < lower) k++;
+#             while (j < hi && prefix[j] - prefix[i] <= upper) j++;
+#             count += j - k;
+#         }
+
+#         Arrays.sort(prefix, lo, hi);
+#         return count;
+#     }
+# }
+
