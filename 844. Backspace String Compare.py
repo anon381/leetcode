@@ -13,5 +13,7 @@ class Solution:
                 elif char != '#':
                     stack.append(char)
             return stack
-
         return remove_characters(s) == remove_characters(t)
+
+
+#in cpp
