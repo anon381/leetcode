@@ -47,4 +47,29 @@ class Solution:
 # };
 
 
+
 #in java
+# class Solution {
+#     public TreeNode increasingBST(TreeNode node) {
+#         TreeNode dummy = new TreeNode(0);
+#         TreeNode tail = dummy;
+
+#         while (node != null) {
+#             if (node.left != null) {
+#                 TreeNode predecessor = node.left;
+#                 while (predecessor.right != null) {
+#                     predecessor = predecessor.right;
+#                 }
+#                 predecessor.right = node;
+#                 TreeNode left = node.left;
+#                 node.left = null;
+#                 node = left;
+#             } else {
+#                 tail.right = node;
+#                 tail = node;
+#                 node = node.right;
+#             }
+#         }
+#         return dummy.right;
+#     }
+# }
