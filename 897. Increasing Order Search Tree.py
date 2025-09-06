@@ -1,3 +1,7 @@
+# complexity
+# Time = O(n)
+# Space = O(h)
+
 class Solution:
     def increasingBST(self, node: TreeNode) -> TreeNode:
         dummy = tail = TreeNode()
