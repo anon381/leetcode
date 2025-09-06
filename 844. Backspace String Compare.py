@@ -1,3 +1,7 @@
+# Complexity
+# Time complexity: O(max(len(s),len(t))
+# Space complexity: O(1)
+
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
 
