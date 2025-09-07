@@ -39,3 +39,7 @@ class Solution:
             if ans is None or len(dp[full_mask][i]) < len(ans):
                 ans = dp[full_mask][i]
         return ans
+
+
+
+#in cpp
