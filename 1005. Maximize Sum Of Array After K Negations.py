@@ -8,12 +8,7 @@ class Solution:
         nums = sorted(nums)
         if k > 0 and k % 2 != 0: 
             nums[0] = -nums[0]
-        return sum(nums)
-
-
-
-
-        
+        return sum(nums)  
 
 #in cpp
 
@@ -23,20 +18,20 @@ class Solution:
 # long long getSum(vector<int> negate, vector<int>positive)
 # {
 #     long long sum =0;
-#                 for(int i=0;i<negate.size();i++)
+#                 for(int i = 0;i<negate.size();i++)
 #             {
 #                 sum+=negate[i];
 #             }
 #         for(int i=0;i<positive.size();i++)
 #             {
-#                 sum+=positive[i];
+#                 sum  += positive[i];
 #             }
 #             return sum;
 # }
 #     int largestSumAfterKNegations(vector<int>& nums, int k) {
 #    vector<int>negate;
 #    vector<int>positive;
-#     for(int i=0;i<nums.size();i++)
+#     for(int i=0 ; i< nums.size();i++)
 #     {
 #         if(nums[i]>=0)
 #         {
