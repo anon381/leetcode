@@ -100,3 +100,53 @@ class Solution:
 
 
 #in java
+# import java.util.*;
+
+# class Solution {
+#     public String shortestSuperstring(String[] words) {
+#         int n = words.length;
+#         int[][] overlap = new int[n][n];
+
+#         // Compute overlaps
+#         for (int i = 0; i < n; i++) {
+#             for (int j = 0; j < n; j++) {
+#                 if (i == j) continue;
+#                 int m = Math.min(words[i].length(), words[j].length());
+#                 for (int k = m; k > 0; k--) {
+#                     if (words[i].endsWith(words[j].substring(0, k))) {
+#                         overlap[i][j] = k;
+#                         break;
+#                     }
+#                 }
+#             }
+#         }
+
+#         // DP[mask][i] = shortest superstring ending with words[i]
+#         String[][] dp = new String[1 << n][n];
+#         for (int i = 0; i < n; i++) dp[1 << i][i] = words[i];
+
+#         for (int mask = 1; mask < (1 << n); mask++) {
+#             for (int j = 0; j < n; j++) {
+#                 if ((mask & (1 << j)) == 0) continue;
+#                 int prevMask = mask ^ (1 << j);
+#                 if (prevMask == 0) continue;
+#                 for (int i = 0; i < n; i++) {
+#                     if ((prevMask & (1 << i)) == 0) continue;
+#                     String candidate = dp[prevMask][i] + words[j].substring(overlap[i][j]);
+#                     if (dp[mask][j] == null || candidate.length() < dp[mask][j].length()) {
+#                         dp[mask][j] = candidate;
+#                     }
+#                 }
+#             }
+#         }
+
+#         // Find answer among all full-mask endings
+#         int fullMask = (1 << n) - 1;
+#         String ans = null;
+#         for (int i = 0; i < n; i++) {
+#             if (ans == null || dp[fullMask][i].length() < ans.length())
+#                 ans = dp[fullMask][i];
+#         }
+#         return ans;
+#     }
+# }
