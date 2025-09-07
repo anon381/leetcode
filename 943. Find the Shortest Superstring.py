@@ -2,7 +2,9 @@ class Solution:
     def shortestSuperstring(self, words):
         n = len(words)
         
-      
+        # Compute overlap[i][j] = maximum suffix of i that is prefix of j
+
+
         overlap = [[0]*n for _ in range(n)]
         for i in range(n):
             for j in range(n):
@@ -12,7 +14,7 @@ class Solution:
                         if words[i].endswith(words[j][:k]):
                             overlap[i][j] = k
                             break
-        
+                      # DP[mask][i] = shortest superstring ending with words[i], using mask set
         dp = [[""]*n for _ in range(1<<n)]
         for i in range(n):
             dp[1<<i][i] = words[i]
@@ -29,7 +31,8 @@ class Solution:
                     candidate = dp[prev_mask][i] + words[j][overlap[i][j]:]
                     if dp[mask][j] == "" or len(candidate) < len(dp[mask][j]):
                         dp[mask][j] = candidate
-        
+                # Pick the shortest among all full-mask superstrings
+
         full_mask = (1<<n) - 1
         ans = None
         for i in range(n):
