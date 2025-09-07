@@ -1,3 +1,9 @@
+# Complexity 
+
+# Time: O(n^2 * L + n^2 * 2^n) where L ≤ 20, n ≤ 12
+
+# Space: O(n * 2^n)
+
 class Solution:
     def shortestSuperstring(self, words):
         n = len(words)
