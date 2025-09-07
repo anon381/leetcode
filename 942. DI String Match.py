@@ -1,3 +1,9 @@
+# Final Complexity
+
+# Time Complexity = O(n)
+
+# Space Complexity = O(n)
+
 class Solution:
     def diStringMatch(self, S):
         left = right = 0
