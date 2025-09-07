@@ -10,3 +10,6 @@ class Solution:
                 left -= 1
                 res.append(left)
         return [i - left for i in res]        
+
+
+#in cpp
