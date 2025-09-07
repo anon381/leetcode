@@ -43,3 +43,55 @@ class Solution:
 
 
 #in cpp
+# #include <bits/stdc++.h>
+# using namespace std;
+
+# class Solution {
+# public:
+#     string shortestSuperstring(vector<string>& words) {
+#         int n = words.size();
+#         vector<vector<int>> overlap(n, vector<int>(n, 0));
+
+#         // Compute overlaps
+#         for (int i = 0; i < n; i++) {
+#             for (int j = 0; j < n; j++) {
+#                 if (i == j) continue;
+#                 int m = min(words[i].size(), words[j].size());
+#                 for (int k = m; k > 0; k--) {
+#                     if (words[i].substr(words[i].size() - k) == words[j].substr(0, k)) {
+#                         overlap[i][j] = k;
+#                         break;
+#                     }
+#                 }
+#             }
+#         }
+
+#         // DP[mask][i] = shortest superstring ending with words[i]
+#         vector<vector<string>> dp(1 << n, vector<string>(n, ""));
+#         for (int i = 0; i < n; i++) dp[1 << i][i] = words[i];
+
+#         for (int mask = 1; mask < (1 << n); mask++) {
+#             for (int j = 0; j < n; j++) {
+#                 if (!(mask & (1 << j))) continue;
+#                 int prevMask = mask ^ (1 << j);
+#                 if (prevMask == 0) continue;
+#                 for (int i = 0; i < n; i++) {
+#                     if (!(prevMask & (1 << i))) continue;
+#                     string candidate = dp[prevMask][i] + words[j].substr(overlap[i][j]);
+#                     if (dp[mask][j].empty() || candidate.size() < dp[mask][j].size()) {
+#                         dp[mask][j] = candidate;
+#                     }
+#                 }
+#             }
+#         }
+
+#         // Find answer among all full-mask endings
+#         int fullMask = (1 << n) - 1;
+#         string ans;
+#         for (int i = 0; i < n; i++) {
+#             if (ans.empty() || dp[fullMask][i].size() < ans.size())
+#                 ans = dp[fullMask][i];
+#         }
+#         return ans;
+#     }
+# };
