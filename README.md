@@ -17,7 +17,7 @@ This repository contains solutions to hundreds of LeetCode problems, primarily i
 - **Languages:** Python 3 (main), Rust (some files), C++/Java (as comments in some files)
 - **Goal:** Improve algorithms & data structure skills
 - **Style:** Clean, readable, and efficient solutions
-- **Coverage:** 250+ problems, spanning a wide range of topics
+- **Coverage:** 250+ problems, spanning a wide range of topicsx`x 
 
 ---
 
