@@ -18,3 +18,35 @@ class Solution:
             
         res = bucket_sorted(res)[::-1]
         return '0' if res and not res[0] else ''.join(map(str, res))
+
+# C++ version of the above Python code:
+#
+# #include <vector>
+# #include <string>
+# #include <algorithm>
+# using namespace std;
+# class Solution {
+# public:
+#     string largestMultipleOfThree(vector<int>& digits) {
+#         sort(digits.rbegin(), digits.rend());
+#         int sum = 0;
+#         vector<int> mod[3];
+#         for (int d : digits) {
+#             sum += d;
+#             mod[d % 3].push_back(d);
+#         }
+#         int r = sum % 3;
+#         if (r) {
+#             if (!mod[r].empty()) mod[r].pop_back();
+#             else if (mod[3 - r].size() >= 2) mod[3 - r].pop_back(), mod[3 - r].pop_back();
+#             else return "";
+#         }
+#         vector<int> res;
+#         for (int i = 0; i < 3; ++i) res.insert(res.end(), mod[i].begin(), mod[i].end());
+#         sort(res.rbegin(), res.rend());
+#         if (res.empty() || res[0] == 0) return "0";
+#         string ans;
+#         for (int d : res) ans += to_string(d);
+#         return ans;
+#     }
+# };
