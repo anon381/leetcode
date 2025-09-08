@@ -1,3 +1,6 @@
+# Time Complexity: O(n log n), where n is the number of digits (due to sorting)
+# Space Complexity: O(n)
+
 class Solution:
     def largestMultipleOfThree(self, digits: list[int]) -> str:
         one = []
