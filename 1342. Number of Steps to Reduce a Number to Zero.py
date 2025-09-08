@@ -1,3 +1,6 @@
+# Time Complexity: O(log n), where n is the input number
+# Space Complexity: O(1)
+
 class Solution:
     def numberOfSteps(self, num: int) -> int:
         if num == 0:
