@@ -1,3 +1,6 @@
+# Time Complexity: O(1) (date parsing and subtraction are constant time)
+# Space Complexity: O(1)
+
 import datetime
 
 class Solution:
