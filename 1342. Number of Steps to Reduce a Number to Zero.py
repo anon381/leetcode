@@ -9,8 +9,10 @@
 
 class Solution:
     def numberOfSteps(self, num: int) -> int:
-        if num == 0:
-            return 0
+        if num == 0:  # Base case: if number is zero
+            return 0  # No steps needed
+        # Recursive case:
+        # If number is odd (num & 1), subtract 1; else, divide by 2
         return 1 + self.numberOfSteps(num - 1 if num & 1 else num >> 1)
 
 # C++ version of the above Python code:
