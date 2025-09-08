@@ -1,3 +1,10 @@
+
+# Function Description:
+# This class maintains a list of numbers and allows efficient retrieval of the product
+# of the last k numbers added. It handles zeros by resetting the product list, ensuring
+# that queries for products including zeros return 0. The add operation and getProduct
+# operation are both optimized for constant time complexity.
+#
 # Time Complexity: O(1) for add, O(1) for getProduct
 # Space Complexity: O(n), where n is the number of added elements
 
