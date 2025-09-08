@@ -17,4 +17,21 @@ class ProductOfNumbers:
             return 0
         else:
             return self.product[-1]//self.product[-k-1]
-        
+
+# C++ version of the above Python code:
+#
+# class ProductOfNumbers {
+#     vector<int> products;
+# public:
+#     ProductOfNumbers() { products.push_back(1); }
+#     void add(int num) {
+#         if (num == 0) products = {1};
+#         else products.push_back(products.back() * num);
+#     }
+#     int getProduct(int k) {
+#         if (products.size() <= k) return 0;
+#         return products.back() / products[products.size() - k - 1];
+#     }
+# };
+#
+
