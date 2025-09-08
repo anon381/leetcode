@@ -3,3 +3,19 @@ class Solution:
         if num == 0:
             return 0
         return 1 + self.numberOfSteps(num - 1 if num & 1 else num >> 1)
+
+# C++ version of the above Python code:
+#
+# class Solution {
+# public:
+#     int numberOfSteps(int num) {
+#         int steps = 0;
+#         while (num) {
+#             if (num % 2 == 0) num /= 2;
+#             else num -= 1;
+#             steps++;
+#         }
+#         return steps;
+#     }
+# };
+#
