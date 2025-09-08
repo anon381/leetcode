@@ -1,3 +1,9 @@
+
+# Function Description:
+# This function calculates the number of steps required to reduce a given number to zero.
+# At each step, if the number is even, it is divided by two; if odd, it is decremented by one.
+# The process continues recursively until the number reaches zero, counting the steps taken.
+#
 # Time Complexity: O(log n), where n is the input number
 # Space Complexity: O(1)
 
