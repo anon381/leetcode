@@ -10,42 +10,43 @@
 
 class Solution:
     def largestMultipleOfThree(self, digits: list[int]) -> str:
-        one = []
-        two = []
-        three = []
-        for i in digits:
-            if i % 3 == 1:
-                one.append(str(i))
-            elif i % 3 == 2:
-                two.append(str(i))
-            else:
-                three.append(str(i))
-        one.sort()
-        two.sort()
-        one = one[::-1]
-        two = two[::-1]
-        if sum(digits) % 3 == 1:
+        one = []  # Digits with remainder 1 when divided by 3
+        two = []  # Digits with remainder 2 when divided by 3
+        three = []  # Digits divisible by 3
+        for i in digits:  # Loop through each digit
+            if i % 3 == 1:  # If digit mod 3 is 1
+                one.append(str(i))  # Add to 'one' list
+            elif i % 3 == 2:  # If digit mod 3 is 2
+                two.append(str(i))  # Add to 'two' list
+            else:  # If digit mod 3 is 0
+                three.append(str(i))  # Add to 'three' list
+        one.sort()  # Sort 'one' list in ascending order
+        two.sort()  # Sort 'two' list in ascending order
+        one = one[::-1]  # Reverse 'one' for descending order
+        two = two[::-1]  # Reverse 'two' for descending order
+        # Adjust lists so sum of digits is divisible by 3
+        if sum(digits) % 3 == 1:  # If total sum mod 3 is 1
             try:
-                one.pop()
-            except:
+                one.pop()  # Remove one smallest 'one' digit
+            except:  # If no 'one' digit, remove two smallest 'two' digits
                 two.pop()
                 two.pop()
-        elif sum(digits) % 3 == 2:
+        elif sum(digits) % 3 == 2:  # If total sum mod 3 is 2
             try:
-                two.pop()
-            except:
+                two.pop()  # Remove one smallest 'two' digit
+            except:  # If no 'two' digit, remove two smallest 'one' digits
                 one.pop()
                 one.pop()
-        ans = "".join(one)
-        ans += "".join(two)
-        ans += "".join(three)
-        
-        if ans == "":
-            return ""
-        if ans[0] == "0":
-            return "0"
-        ans = "".join(sorted(ans))[::-1]
-        return ans
+        ans = "".join(one)  # Concatenate 'one' digits
+        ans += "".join(two)  # Concatenate 'two' digits
+        ans += "".join(three)  # Concatenate 'three' digits
+        # Handle edge cases
+        if ans == "":  # If result is empty
+            return ""  # Return empty string
+        if ans[0] == "0":  # If result starts with zero
+            return "0"  # Return "0"
+        ans = "".join(sorted(ans))[::-1]  # Sort digits in descending order
+        return ans  # Return final answer
 
 
 
