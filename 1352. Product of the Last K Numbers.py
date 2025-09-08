@@ -1,3 +1,6 @@
+# Time Complexity: O(1) for add, O(1) for getProduct
+# Space Complexity: O(n), where n is the number of added elements
+
 class ProductOfNumbers:
 
     def __init__(self):
