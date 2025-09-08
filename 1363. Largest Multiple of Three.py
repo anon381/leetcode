@@ -96,3 +96,34 @@ class Solution:
 #         return ans;
 #     }
 # };
+
+
+# Java version of the above Python code:
+#
+# import java.util.*;
+# class Solution {
+#     public String largestMultipleOfThree(int[] digits) {
+#         Arrays.sort(digits);
+#         int sum = 0;
+#         List<Integer>[] mod = new List[3];
+#         for (int i = 0; i < 3; ++i) mod[i] = new ArrayList<>();
+#         for (int d : digits) {
+#             sum += d;
+#             mod[d % 3].add(d);
+#         }
+#         int r = sum % 3;
+#         if (r != 0) {
+#             if (!mod[r].isEmpty()) mod[r].remove(0);
+#             else if (mod[3 - r].size() >= 2) { mod[3 - r].remove(0); mod[3 - r].remove(0); }
+#             else return "";
+#         }
+#         List<Integer> res = new ArrayList<>();
+#         for (int i = 0; i < 3; ++i) res.addAll(mod[i]);
+#         res.sort(Collections.reverseOrder());
+#         if (res.isEmpty() || res.get(0) == 0) return "0";
+#         StringBuilder sb = new StringBuilder();
+#         for (int d : res) sb.append(d);
+#         return sb.toString();
+#     }
+# }
+#
