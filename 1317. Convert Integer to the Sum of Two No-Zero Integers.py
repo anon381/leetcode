@@ -26,3 +26,5 @@ class Solution:
 #         return str.find('0') != string::npos;
 #     }
 # };
+
+#in java
