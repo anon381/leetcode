@@ -11,22 +11,22 @@
 class ProductOfNumbers:
 
     def __init__(self):
-        self.product=[1]
-        self.n=1
+    self.product=[1]  # List to store cumulative products
+    self.n=1  # Counter for number of elements
 
     def add(self, num: int) -> None:
-        if num==0:
-            self.product=[1]
-            self.n=1
+        if num==0:  # If added number is zero
+            self.product=[1]  # Reset product list
+            self.n=1  # Reset counter
         else:
-            self.product.append(self.product[-1]*num)
-            self.n+=1
+            self.product.append(self.product[-1]*num)  # Append new product
+            self.n+=1  # Increment counter
 
     def getProduct(self, k: int) -> int:
-        if self.n<=k:
-            return 0
+        if self.n<=k:  # If not enough elements for product
+            return 0  # Return 0
         else:
-            return self.product[-1]//self.product[-k-1]
+            return self.product[-1]//self.product[-k-1]  # Return product of last k numbers
 
 # C++ version of the above Python code:
 #
