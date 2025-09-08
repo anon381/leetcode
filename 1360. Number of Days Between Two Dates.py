@@ -2,7 +2,7 @@
 # Function Description:
 # This function computes the absolute number of days between two dates given in 'YYYY-MM-DD' format.
 # It parses the input strings into date objects and calculates the difference in days, returning the result.
-#
+
 # Time Complexity: O(1) (date parsing and subtraction are constant time)
 # Space Complexity: O(1)
 

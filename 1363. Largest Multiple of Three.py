@@ -4,7 +4,7 @@
 # such that the number is a multiple of three. It does so by grouping digits based on their
 # remainder when divided by three, sorting them, and removing the minimal number of digits
 # to ensure the sum of the digits is divisible by three. The result is returned as a string.
-#
+
 # Time Complexity: O(n log n), where n is the number of digits (due to sorting)
 # Space Complexity: O(n)
 
