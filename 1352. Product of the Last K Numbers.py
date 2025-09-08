@@ -34,4 +34,20 @@ class ProductOfNumbers:
 #     }
 # };
 #
+# Java version of the above Python code:
+#
+# import java.util.*;
+# class ProductOfNumbers {
+#     List<Integer> products = new ArrayList<>();
+#     public ProductOfNumbers() { products.add(1); }
+#     public void add(int num) {
+#         if (num == 0) products = new ArrayList<>(Arrays.asList(1));
+#         else products.add(products.get(products.size()-1) * num);
+#     }
+#     public int getProduct(int k) {
+#         if (products.size() <= k) return 0;
+#         return products.get(products.size()-1) / products.get(products.size()-k-1);
+#     }
+# }
+#
 
