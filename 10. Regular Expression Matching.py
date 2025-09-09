@@ -40,4 +40,4 @@ class Solution:
 
 
 
-#in cpp
+#in java
