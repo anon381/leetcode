@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-This repository contains solutions to hundreds of LeetCode problems, primarily in **Python 3**, with some problems also in **Rust** (`.rs` files). The goal is to practice, learn, and track progress in algorithms and data structures.
+This repository contains solutions to hundreds of LeetCode problems, primarily in **Python 3**, with some problems.  The goal is to practice, learn, and track progress in algorithms and data structures.
 
 ---
 
