@@ -28,6 +28,11 @@ class Solution:
             ans=min(ans, cnt)
         return ans
         
+    # Description:
+    # This solution determines the minimum number of people that need to be taught a new language so that all friendships can communicate.
+    # It first builds sets of languages known by each person, then identifies which friendships cannot communicate.
+    # For each language, it counts how many people in the problematic friendships do not know that language, and finds the minimum such count.
+    # The answer is the smallest number of people to teach a single language so all friendships are covered.
 
 # C++ version of the above Python code:
 # #include <vector>
