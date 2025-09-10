@@ -1,7 +1,5 @@
 """
 Time Complexity: O(N), where N is the total number of words in both sentences
-"""
-"""
 Space Complexity: O(N), for storing all words and their counts
 """
 
