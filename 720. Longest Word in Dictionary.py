@@ -27,3 +27,44 @@ class Solution:
 
 
 # C++ version of the above Python code:
+# #include <vector>
+# #include <string>
+# #include <unordered_map>
+# using namespace std;
+#
+# class TrieNode {
+# public:
+#     unordered_map<char, TrieNode*> children;
+#     bool end = false;
+# };
+#
+# class Solution {
+# public:
+#     string longestWord(vector<string>& words) {
+#         TrieNode* root = new TrieNode();
+#         for (const string& word : words) {
+#             TrieNode* cur = root;
+#             for (char letter : word) {
+#                 if (cur->children.find(letter) == cur->children.end()) {
+#                     cur->children[letter] = new TrieNode();
+#                 }
+#                 cur = cur->children[letter];
+#             }
+#             cur->end = true;
+#         }
+#
+#         string res = "";
+#         for (const string& word : words) {
+#             if (word.length() < res.length()) continue;
+#             TrieNode* cur = root;
+#             for (char letter : word) {
+#                 cur = cur->children[letter];
+#                 if (!cur) break;
+#             }
+#             if (cur && cur->end && (word.length() > res.length() || (word.length() == res.length() && word < res))) {
+#                 res = word;
+#             }
+#         }
+#         return res;
+#     }
+# };
