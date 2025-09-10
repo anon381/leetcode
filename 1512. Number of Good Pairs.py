@@ -1,7 +1,6 @@
 """
 Time Complexity: O(n^2), where n is the length of the input array
-"""
-"""
+
 Space Complexity: O(1), only constant extra space is used
 """
 
