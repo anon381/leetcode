@@ -4,12 +4,14 @@ Time Complexity: O(N), where N is the total number of words in both sentences
 """
 Space Complexity: O(N), for storing all words and their counts
 """
+
 class Solution:
     def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
-        words_s1 = s1.split()
-        words_s2 = s2.split()        
-        all_words = words_s1 + words_s2        
-        word_count = Counter(all_words)        
+        words_s1 = s1.split()  # Split first sentence into words
+        words_s2 = s2.split()  # Split second sentence into words
+        all_words = words_s1 + words_s2  # Combine all words
+        word_count = Counter(all_words)  # Count occurrences of each word
+        # Return words that appear exactly once
         return [word for word in word_count if word_count[word] == 1]
 
 
