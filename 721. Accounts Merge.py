@@ -28,3 +28,5 @@ class Solution:
                 output.append([k]+sorted(list(cur_set)))
         return output
         
+
+# C++ version of the above Python code:
