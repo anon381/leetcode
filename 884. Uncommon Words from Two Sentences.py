@@ -1,6 +1,9 @@
 """
 Time Complexity: O(N), where N is the total number of words in both sentences
 """
+"""
+Space Complexity: O(N), for storing all words and their counts
+"""
 class Solution:
     def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
         words_s1 = s1.split()
