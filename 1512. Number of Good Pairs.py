@@ -5,5 +5,6 @@ class Solution:
             for j in range(i + 1, len(nums)):
                 if nums[i] == nums[j]:
                     count += 1
-        
         return count
+
+        #cpp version of the above python code:
