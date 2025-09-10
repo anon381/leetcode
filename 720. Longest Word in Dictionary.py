@@ -68,3 +68,5 @@ class Solution:
 #         return res;
 #     }
 # };
+
+# Java version of the above Python code:
