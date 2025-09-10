@@ -1,7 +1,6 @@
 """
 Time Complexity: O(N * K), where N is the number of accounts and K is the average number of emails per account
-"""
-"""
+
 Space Complexity: O(N * K), for storing all accounts and emails in data structures
 """
 from collections import defaultdict
