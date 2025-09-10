@@ -31,6 +31,10 @@ class Solution:
         return res
 
 
+    # Description:
+    # This solution uses a Trie data structure to efficiently check if each word can be built one character at a time by other words in the list.
+    # It inserts all words into the Trie, then for each word, checks if all prefixes of the word are present as complete words in the Trie.
+    # The longest word that meets this condition (or the lexicographically smallest if there are ties) is returned.
 
 # C++ version of the above Python code:
 # #include <vector>
