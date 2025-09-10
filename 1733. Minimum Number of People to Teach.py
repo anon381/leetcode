@@ -1,7 +1,6 @@
 """
 Time Complexity: O(n * m + f), where n is the number of languages, m is the number of people, and f is the number of friendships
-"""
-"""
+
 Space Complexity: O(m + f), for storing knowledge sets and friendship pairs
 """
 
