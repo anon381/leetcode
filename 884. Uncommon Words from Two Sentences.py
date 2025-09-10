@@ -13,6 +13,9 @@ class Solution:
         return [word for word in word_count if word_count[word] == 1]
 
 
+    # Description:
+    # This solution finds all words that appear exactly once in the combined sentences.
+    # It splits both sentences into words, counts occurrences, and returns those with a count of one.
 # C++ version of the above Python code:
 # #include <vector>
 # #include <string>
