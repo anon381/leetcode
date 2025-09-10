@@ -23,3 +23,7 @@ class Solution:
             if cur.end and (len(word) > len(res) or (len(word) == len(res) and word < res)):
                 res = word        
         return res
+
+
+
+# C++ version of the above Python code:
