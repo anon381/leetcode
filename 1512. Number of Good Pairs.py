@@ -1,3 +1,6 @@
+"""
+Time Complexity: O(n^2), where n is the length of the input array
+"""
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
         count = 0
