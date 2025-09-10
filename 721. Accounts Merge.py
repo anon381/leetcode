@@ -34,6 +34,10 @@ class Solution:
                 output.append([k]+sorted(list(cur_set)))
         return output
         
+    # Description:
+    # This solution merges accounts by grouping emails that belong to the same person.
+    # It uses sets to track emails for each name and merges overlapping sets when common emails are found.
+    # The result is a list of accounts with merged emails, sorted for each person.
 
 # C++ version of the above Python code:
 # #include <vector>
