@@ -4,29 +4,33 @@ Time Complexity: O(n * m + f), where n is the number of languages, m is the numb
 """
 Space Complexity: O(m + f), for storing knowledge sets and friendship pairs
 """
+
 class Solution:
     def minimumTeachings(self, n: int, languages: List[List[int]], friendships: List[List[int]]) -> int:
-        m=len(languages)
-        know=[set() for _ in range(m)]
-        for i, L in enumerate(languages):
-            know[i]=set(L)
-        
-        need=set()
-        for a1, b1 in friendships:
-            a, b=a1-1, b1-1
-            if know[a] & know[b]: continue
-            need.add(a)
-            need.add(b)
-        
-        if not need: return 0
+        m = len(languages)  # Number of people
+        know = [set() for _ in range(m)]  # List of sets of languages known by each person
+        for i, L in enumerate(languages):  # For each person
+            know[i] = set(L)  # Store the set of languages they know
 
-        ans=float('inf')
-        for lang in range(1, n+1):
-            cnt=0
-            for i in need:
-                if lang not in know[i]: cnt+=1
-            ans=min(ans, cnt)
-        return ans
+        need = set()  # Set of people who need to be taught
+        for a1, b1 in friendships:  # For each friendship
+            a, b = a1 - 1, b1 - 1  # Convert to 0-based index
+            if know[a] & know[b]:  # If they share a language
+                continue  # No need to teach
+            need.add(a)  # Otherwise, add both to need set
+            need.add(b)
+
+        if not need:
+            return 0  # If everyone can communicate, return 0
+
+        ans = float('inf')  # Initialize answer to infinity
+        for lang in range(1, n + 1):  # For each language
+            cnt = 0  # Count of people to teach this language
+            for i in need:  # For each person who needs to be taught
+                if lang not in know[i]:  # If they don't know this language
+                    cnt += 1  # Increment count
+            ans = min(ans, cnt)  # Update answer if smaller
+        return ans  # Return the minimum number of people to teach
         
     # Description:
     # This solution determines the minimum number of people that need to be taught a new language so that all friendships can communicate.
