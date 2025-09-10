@@ -81,3 +81,5 @@ class Solution:
 #         }
 #     }
 # };
+
+# Java version of the above Python code:
