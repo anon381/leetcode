@@ -70,3 +70,36 @@ class Solution:
 # };
 
 # Java version of the above Python code:
+# import java.util.*;
+# class TrieNode {
+#     Map<Character, TrieNode> children = new HashMap<>();
+#     boolean end = false;
+# }
+#
+# class Solution {
+#     public String longestWord(List<String> words) {
+#         TrieNode root = new TrieNode();
+#         for (String word : words) {
+#             TrieNode cur = root;
+#             for (char letter : word.toCharArray()) {
+#                 cur.children.putIfAbsent(letter, new TrieNode());
+#                 cur = cur.children.get(letter);
+#             }
+#             cur.end = true;
+#         }
+#
+#         String res = "";
+#         for (String word : words) {
+#             if (word.length() < res.length()) continue;
+#             TrieNode cur = root;
+#             for (char letter : word.toCharArray()) {
+#                 cur = cur.children.get(letter);
+#                 if (cur == null) break;
+#             }
+#             if (cur != null && cur.end && (word.length() > res.length() || (word.length() == res.length() && word.compareTo(res) < 0))) {
+#                 res = word;
+#             }
+#         }
+#         return res;
+#     }
+# };
