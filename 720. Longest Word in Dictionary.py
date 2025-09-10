@@ -4,31 +4,37 @@ Time Complexity: O(N * L), where N is the number of words and L is the average l
 """
 Space Complexity: O(N * L), for storing all words in the Trie
 """
+
+# Trie node class
 class TrieNode(object):
     def __init__(self):
-        self.children = {}
-        self.end = False
+        self.children = {}  # Dictionary to store child nodes
+        self.end = False    # Flag to indicate end of a word
+
+# Solution class
 class Solution:
     def longestWord(self, words: List[str]) -> str:
-        root = TrieNode()
+        root = TrieNode()  # Create root of Trie
+        # Insert all words into Trie
         for word in words:
-            cur = root
-            for letter in word:
-                if letter not in cur.children:
-                    cur.children[letter] = TrieNode()
-                cur = cur.children[letter]
-            cur.end = True
-            
-        res = ''
+            cur = root  # Start from root
+            for letter in word:  # For each character in word
+                if letter not in cur.children:  # If child does not exist
+                    cur.children[letter] = TrieNode()  # Create new node
+                cur = cur.children[letter]  # Move to child node
+            cur.end = True  # Mark end of word
+
+        res = ''  # Result variable for longest word
+        # Check each word
         for word in words:
-            if len(word) < len(res): continue
-            cur = root
-            for letter in word:
-                cur = cur.children[letter]
-                if not cur.end: break
+            if len(word) < len(res): continue  # Skip if shorter than current result
+            cur = root  # Start from root
+            for letter in word:  # For each character
+                cur = cur.children[letter]  # Move to child node
+                if not cur.end: break  # If prefix is not a word, break
             if cur.end and (len(word) > len(res) or (len(word) == len(res) and word < res)):
-                res = word        
-        return res
+                res = word  # Update result if longer or lexicographically smaller
+        return res  # Return the longest word
 
 
     # Description:
