@@ -5,3 +5,6 @@ class Solution:
         all_words = words_s1 + words_s2        
         word_count = Counter(all_words)        
         return [word for word in word_count if word_count[word] == 1]
+
+
+# C++ version of the above Python code:
