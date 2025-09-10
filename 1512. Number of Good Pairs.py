@@ -4,14 +4,15 @@ Time Complexity: O(n^2), where n is the length of the input array
 """
 Space Complexity: O(1), only constant extra space is used
 """
+
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
-        count = 0
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                if nums[i] == nums[j]:
-                    count += 1
-        return count
+        count = 0  # Initialize count of good pairs
+        for i in range(len(nums)):  # Iterate over each element
+            for j in range(i + 1, len(nums)):  # Iterate over elements after i
+                if nums[i] == nums[j]:  # If elements are equal
+                    count += 1  # Increment count for good pair
+        return count  # Return total number of good pairs
 
         #cpp version of the above python code:
         #include <vector>
