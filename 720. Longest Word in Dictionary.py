@@ -1,3 +1,6 @@
+"""
+Time Complexity: O(N * L), where N is the number of words and L is the average length of the words
+"""
 class TrieNode(object):
     def __init__(self):
         self.children = {}
