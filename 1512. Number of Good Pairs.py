@@ -14,6 +14,12 @@ class Solution:
                     count += 1  # Increment count for good pair
         return count  # Return total number of good pairs
 
+  # Description:
+    # This solution counts the number of pairs (i, j) such that nums[i] == nums[j] and i < j.
+    # It uses two nested loops to compare each pair of elements in the array and increments the count when a good pair is found.
+       
+
+
         #cpp version of the above python code:
         #include <vector>
         #using namespace std;
@@ -29,9 +35,6 @@ class Solution:
         #            }
         #        }
         #        return count;
-    # Description:
-    # This solution counts the number of pairs (i, j) such that nums[i] == nums[j] and i < j.
-    # It uses two nested loops to compare each pair of elements in the array and increments the count when a good pair is found.
         #    }
         #};
 
