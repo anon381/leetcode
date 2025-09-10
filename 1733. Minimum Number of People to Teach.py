@@ -1,6 +1,9 @@
 """
 Time Complexity: O(n * m + f), where n is the number of languages, m is the number of people, and f is the number of friendships
 """
+"""
+Space Complexity: O(m + f), for storing knowledge sets and friendship pairs
+"""
 class Solution:
     def minimumTeachings(self, n: int, languages: List[List[int]], friendships: List[List[int]]) -> int:
         m=len(languages)
