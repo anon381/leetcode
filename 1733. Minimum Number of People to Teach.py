@@ -22,3 +22,5 @@ class Solution:
             ans=min(ans, cnt)
         return ans
         
+
+# C++ version of the above Python code:
