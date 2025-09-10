@@ -83,3 +83,47 @@ class Solution:
 # };
 
 # Java version of the above Python code:
+# import java.util.*;
+# class Solution {
+#     public List<List<String>> accountsMerge(List<List<String>> accounts) {
+#         Map<String, String> emailToName = new HashMap<>();
+#         Map<String, Set<String>> graph = new HashMap<>();
+#         for (List<String> account : accounts) {
+#             String name = account.get(0);
+#             for (int i = 1; i < account.size(); i++) {
+#                 String email = account.get(i);
+#                 emailToName.put(email, name);
+#                 graph.putIfAbsent(email, new HashSet<>());
+#                 if (i > 1) {
+#                     graph.get(account.get(i - 1)).add(email);
+#                     graph.get(email).add(account.get(i - 1));
+#                 }
+#             }
+#         }
+#
+#         Set<String> visited = new HashSet<>();
+#         List<List<String>> mergedAccounts = new ArrayList<>();
+#         for (String email : emailToName.keySet()) {
+#             if (!visited.contains(email)) {
+#                 List<String> merged = new ArrayList<>();
+#                 dfs(email, visited, graph, merged);
+#                 Collections.sort(merged);
+#                 mergedAccounts.add(new ArrayList<>(Arrays.asList(emailToName.get(email))));
+#                 mergedAccounts.get(mergedAccounts.size() - 1).addAll(merged);
+#             }
+#         }
+#         return mergedAccounts;
+#     }
+#
+#     private void dfs(String email, Set<String> visited,
+#                      Map<String, Set<String>> graph,
+#                      List<String> merged) {
+#         visited.add(email);
+#         merged.add(email);
+#         for (String neighbor : graph.get(email)) {
+#             if (!visited.contains(neighbor)) {
+#                 dfs(neighbor, visited, graph, merged);
+#             }
+#         }
+#     }
+# };
