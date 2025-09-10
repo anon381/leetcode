@@ -5,34 +5,35 @@ Time Complexity: O(N * K), where N is the number of accounts and K is the averag
 Space Complexity: O(N * K), for storing all accounts and emails in data structures
 """
 from collections import defaultdict
+
 class Solution:
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
-        sol = defaultdict(list)
-        for a in accounts:
-            name = a[0]
-            cur_emails = set(a[1:])
-            if name not in sol:
-                sol[name]=[cur_emails]
+        sol = defaultdict(list)  # Dictionary to store sets of emails for each name
+        for a in accounts:  # Iterate over each account
+            name = a[0]  # Get the name
+            cur_emails = set(a[1:])  # Get the set of emails for this account
+            if name not in sol:  # If name not seen before
+                sol[name] = [cur_emails]  # Add new list with current emails
             else:
-                merged=False
-                newsets=[]
-                for cur_set in sol[name]:
-                    if len(cur_set.intersection(cur_emails)):
-                        cur_emails.update(cur_set)
-                        merged=True
+                merged = False  # Flag to check if merge happened
+                newsets = []  # List to store non-overlapping sets
+                for cur_set in sol[name]:  # For each existing set of emails
+                    if len(cur_set.intersection(cur_emails)):  # If sets overlap
+                        cur_emails.update(cur_set)  # Merge emails
+                        merged = True  # Mark as merged
                     else:
-                        newsets.append(cur_set)
+                        newsets.append(cur_set)  # Keep non-overlapping set
                 if not merged:
-                    sol[name].append(cur_emails)
+                    sol[name].append(cur_emails)  # Add as new set if no merge
                 else:
-                    newsets.append(cur_emails)
-                    sol[name]=newsets
-        output =[]
-        for k in sol.keys():
-            inner = sol[k]
-            for cur_set in inner:
-                output.append([k]+sorted(list(cur_set)))
-        return output
+                    newsets.append(cur_emails)  # Add merged set
+                    sol[name] = newsets  # Update sets for name
+        output = []  # List to store final merged accounts
+        for k in sol.keys():  # For each name
+            inner = sol[k]  # Get list of email sets
+            for cur_set in inner:  # For each set
+                output.append([k] + sorted(list(cur_set)))  # Add name and sorted emails
+        return output  # Return merged accounts
         
     # Description:
     # This solution merges accounts by grouping emails that belong to the same person.
