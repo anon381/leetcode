@@ -34,3 +34,20 @@ class Solution:
 # };
 
 # Java version of the above Python code:
+# import java.util.*;
+# class Solution {
+#     public List<String> uncommonFromSentences(String A, String B) {
+#         Map<String, Integer> count = new HashMap<>();
+#         String[] words = (A + " " + B).split(" ");
+#         for (String word : words) {
+#             count.put(word, count.getOrDefault(word, 0) + 1);
+#         }
+#         List<String> result = new ArrayList<>();
+#         for (Map.Entry<String, Integer> entry : count.entrySet()) {
+#             if (entry.getValue() == 1) {
+#                 result.add(entry.getKey());
+#             }
+#         }
+#         return result;
+#     }
+# };
