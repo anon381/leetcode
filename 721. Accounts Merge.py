@@ -1,3 +1,6 @@
+"""
+Time Complexity: O(N * K), where N is the number of accounts and K is the average number of emails per account
+"""
 from collections import defaultdict
 class Solution:
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
