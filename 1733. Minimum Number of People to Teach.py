@@ -61,3 +61,34 @@ class Solution:
 # };
 
 # Java version of the above Python code:
+# import java.util.*;
+# class Solution {
+#     public int minimumTeachings(int n, List<List<Integer>> languages, List<List<Integer>> friendships) {
+#         int m = languages.size();
+#         List<Set<Integer>> know = new ArrayList<>();
+#         for (int i = 0; i < m; i++) {
+#             know.add(new HashSet<>(languages.get(i)));
+#         }
+#
+#         Set<Integer> need = new HashSet<>();
+#         for (List<Integer> f : friendships) {
+#             int a = f.get(0) - 1, b = f.get(1) - 1;
+#             if (!know.get(a).isEmpty() && !know.get(b).isEmpty() && Collections.disjoint(know.get(a), know.get(b))) {
+#                 need.add(a);
+#                 need.add(b);
+#             }
+#         }
+#
+#         if (need.isEmpty()) return 0;
+#
+#         int ans = Integer.MAX_VALUE;
+#         for (int lang = 1; lang <= n; lang++) {
+#             int cnt = 0;
+#             for (int i : need) {
+#                 if (!know.get(i).contains(lang)) cnt++;
+#             }
+#             ans = Math.min(ans, cnt);
+#         }
+#         return ans;
+#     }
+# };
