@@ -59,3 +59,5 @@ class Solution:
 #         return ans;
 #     }
 # };
+
+# Java version of the above Python code:
