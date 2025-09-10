@@ -32,3 +32,5 @@ class Solution:
 #         return result;
 #     }
 # };
+
+# Java version of the above Python code:
