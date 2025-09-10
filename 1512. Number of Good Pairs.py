@@ -24,3 +24,6 @@ class Solution:
         #        return count;
         #    }
         #};
+
+
+        #Java version of the above python code:
