@@ -8,3 +8,27 @@ class Solution:
 
 
 # C++ version of the above Python code:
+# #include <vector>
+# #include <string>
+# #include <unordered_map>
+# #include <unordered_set>
+# using namespace std;
+#
+# class Solution {
+# public:
+#     vector<string> uncommonFromSentences(string A, string B) {
+#         unordered_map<string, int> count;
+#         stringstream ss(A + " " + B);
+#         string word;
+#         while (ss >> word) {
+#             count[word]++;
+#         }
+#         vector<string> result;
+#         for (const auto& entry : count) {
+#             if (entry.second == 1) {
+#                 result.push_back(entry.first);
+#             }
+#         }
+#         return result;
+#     }
+# };
