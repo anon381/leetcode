@@ -51,3 +51,7 @@ class Solution:
 #         return string("AEIOUaeiou").find(c) != string::npos;
 #     }
 # };
+
+
+
+#in java
