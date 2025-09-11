@@ -1,3 +1,9 @@
+# Time complexity:
+# O(n), 
+# Space complexity:
+# O(1), 
+
+
 class Solution:
     def checkValidString(self, s: str) -> bool:
         leftMin, leftMax = 0, 0
