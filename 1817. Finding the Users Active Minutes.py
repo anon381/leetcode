@@ -9,3 +9,6 @@ class Solution:
             if u <= k:
                 answer[u-1] += 1
         return answer
+
+
+#in cpp
