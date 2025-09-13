@@ -13,3 +13,24 @@ class Solution:
 
 
 #in cpp
+# class Solution {
+# public:
+#     int countBalls(int lowLimit, int highLimit) {
+#         unordered_map<int,int> mp;
+
+#         int maxi = -1;
+#         for(int i=lowLimit;i<=highLimit;i++){
+#             int val = i;
+#             int sum = 0;
+
+#             while(val!=0){
+#                 sum += val%10;
+#                 val /= 10;
+#             }
+#             mp[sum]++;
+#             maxi = max(maxi,mp[sum]);
+#         }
+#         return maxi;
+        
+#     }
+# };
