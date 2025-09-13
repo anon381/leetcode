@@ -38,3 +38,6 @@ class Solution:
             out.append(pairs)
 
         return out
+
+
+#in cpp
