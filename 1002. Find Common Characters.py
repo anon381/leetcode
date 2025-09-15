@@ -8,3 +8,6 @@ class Solution:
             frequency = min([word.count(char) for word in words])
             res += [char] * frequency
         return res
+
+
+#in cpp
