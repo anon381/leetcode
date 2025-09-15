@@ -4,7 +4,7 @@ class Solution:
         if n < size: return 0
         best = tmp = sum(arr[:size])
         for i in range(1,n-size+1):
-            tmp = tmp + arr[i+size-1] - arr[i-1]
+            tmp += arr[i+size-1] - arr[i-1]
             if tmp > best:best = tmp
         return best
     def maxSumTwoNoOverlap(self, nums: List[int], firstLen: int, secondLen: int) -> int:
