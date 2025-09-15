@@ -42,3 +42,7 @@ class Solution(object):
 #         return a;
 #     }
 # };
+
+
+
+# IN java
