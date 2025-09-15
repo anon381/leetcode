@@ -21,3 +21,4 @@ class Solution(object):
         return min(dict_pre.keys())
 		
 		
+#IN CPP
