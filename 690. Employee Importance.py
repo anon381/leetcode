@@ -20,6 +20,8 @@ class Solution:
         return dfs(id)
         
 #in cpp
+
+
 # class Solution {
 # public:
 #     int getImportance(vector<Employee*> employees, int id) {
@@ -35,3 +37,26 @@ class Solution:
 #         for(auto x: m[id]->subordinates) DFS(m, x, sum);
 #     }
 # };
+
+
+
+#in java
+# class Solution {
+#     // Recursive DFS to calculate total importance
+#     private int dfs(int id, Map<Integer, Employee> empMap) {
+#         Employee emp = empMap.get(id);
+#         int imp = emp.importance; // own importance
+#         for (int subId : emp.subordinates) {
+#             imp += dfs(subId, empMap); // add importance of subordinates
+#         }
+#         return imp;
+#     }
+
+#     public int getImportance(List<Employee> employees, int id) {
+#         Map<Integer, Employee> empMap = new HashMap<>();
+#         for (Employee emp : employees) {
+#             empMap.put(emp.id, emp); // map id to employee
+#         }
+#         return dfs(id, empMap);
+#     }
+# }
