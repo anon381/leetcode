@@ -62,3 +62,6 @@ class LFUCache:
         self.freqToList[newFreq].appendleft(node.key)
         self.freqToKey[newFreq].add(node.key)
         node.freq = newFreq
+
+
+#in cpp
