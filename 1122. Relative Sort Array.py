@@ -41,3 +41,7 @@ class Solution:
 #         return result;
 #     }
 # };
+
+
+
+#in java
