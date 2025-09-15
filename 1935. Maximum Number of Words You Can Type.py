@@ -15,3 +15,6 @@ class Solution:
                     count += 1
                 wordMask = 0
         return count
+
+
+#in cpp
