@@ -10,3 +10,12 @@ class Solution:
 #         return true;
 #     }
 # };
+
+
+
+#in java
+# class Solution {
+#     public boolean stoneGame(int[] piles) {
+#         return true;
+#     }
+# }
