@@ -13,3 +13,8 @@ class Solution:
                     dp[i][j] = (dp[i][j] + dp[i-1][j] * (j-k)) % mod
         
         return dp[goal][n]
+
+
+
+
+#in cpp
