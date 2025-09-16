@@ -40,3 +40,7 @@ class Solution:
 
 #     }
 # };
+
+
+
+# in java
