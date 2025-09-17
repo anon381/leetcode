@@ -10,3 +10,11 @@ class Solution:
 #         return n - 1;
 #     }
 # };
+
+
+#in java
+# class Solution {
+#     public int numberOfMatches(int n) {
+#         return n - 1;
+#     }
+# }
