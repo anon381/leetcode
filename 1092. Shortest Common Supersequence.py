@@ -28,3 +28,6 @@ class Solution:
             result.append(str2[j-1])
             j -= 1        
         return ''.join(result[::-1])
+
+
+#in cpp
