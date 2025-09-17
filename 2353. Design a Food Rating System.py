@@ -31,3 +31,8 @@ class FoodRatings:
 # obj = FoodRatings(foods, cuisines, ratings)
 # obj.changeRating(food,newRating)
 # param_2 = obj.highestRated(cuisine)
+
+
+
+
+#in cpp
