@@ -9,3 +9,16 @@ class Solution:
 
 
 #in cpp
+# class Solution {
+# public:
+#     bool squareIsWhite(string coordinates) {
+#         char letter = coordinates[0];
+#         char num = coordinates[1];
+        
+#         if (letter % 2 == 0) {
+#             return (num - '0') % 2 != 0;
+#         } else {
+#             return (num - '0') % 2 == 0;
+#         }
+#     }
+# };
