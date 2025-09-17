@@ -6,3 +6,6 @@ class Solution:
             return int(num) % 2 != 0
         else:
             return int(num) % 2 == 0
+
+
+#in cpp
