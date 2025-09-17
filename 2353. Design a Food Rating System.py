@@ -79,3 +79,8 @@ class FoodRatings:
 #     cout.tie(0);
 #     return 'c';
 # }();
+
+
+
+
+#in java
