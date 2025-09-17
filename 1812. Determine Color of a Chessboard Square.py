@@ -25,3 +25,15 @@ class Solution:
 
 
 #in java
+# class Solution {
+#     public boolean squareIsWhite(String coordinates) {
+#         char letter = coordinates.charAt(0);
+#         char num = coordinates.charAt(1);
+        
+#         if (letter % 2 == 0) {
+#             return (num - '0') % 2 != 0;
+#         } else {
+#             return (num - '0') % 2 == 0;
+#         }
+#     }
+# }
