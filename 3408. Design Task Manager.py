@@ -27,3 +27,6 @@ class TaskManager(object):
                 self.taskPriority[tid] = -1
                 return self.taskOwner.get(tid, -1)
         return -1
+
+
+#in cpp
