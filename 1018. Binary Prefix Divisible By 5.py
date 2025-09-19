@@ -8,3 +8,4 @@ class Solution:
             res.append(num == 0)
             
         return res
+#in cpp
