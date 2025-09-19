@@ -24,7 +24,14 @@ class Solution:
         n = len(arr)
         prev0, prev1 = arr[0], -10**9
         res = arr[0]
+     for i in range(1, n):
+        dp0 = max(prev0 + arr[i], arr[i])
+        dp1 = max(prev1 + arr[i], prev0)
+        res = max(res, max(dp0, dp1))           
+        prev0, prev1 = dp0, dp1
 
+     return res
+    
        
 
 
