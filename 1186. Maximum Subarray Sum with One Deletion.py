@@ -3,6 +3,8 @@
 # Time complexity: O(N)
 # Space complexity: O(N)
 
+
+#in python 3
 class Solution:
     def maximumSum(self, arr: List[int]) -> int:
         n = len(arr)
@@ -19,6 +21,7 @@ class Solution:
 
 # or
 
+#in python
 class Solution:
     def maximumSum(self, arr):
         n = len(arr)
