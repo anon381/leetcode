@@ -50,3 +50,36 @@ class Solution:
 # };
 
 #in java
+# import java.util.*;
+
+# class Solution {
+#     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+#         if (t < 0) return false;
+
+#         Map<Long, long[]> bucket = new HashMap<>();
+#         long w = (long)t + 1; // bucket size
+
+#         for (int i = 0; i < nums.length; i++) {
+#             long x = nums[i];
+#             long bkt = x / w;
+#             if (x < 0) bkt--; // handle negatives
+
+#             // Check same bucket
+#             if (bucket.containsKey(bkt) && i - bucket.get(bkt)[0] <= k)
+#                 return true;
+
+#             // Check neighbors
+#             if (bucket.containsKey(bkt - 1) && i - bucket.get(bkt - 1)[0] <= k &&
+#                 Math.abs(x - bucket.get(bkt - 1)[1]) <= t)
+#                 return true;
+
+#             if (bucket.containsKey(bkt + 1) && i - bucket.get(bkt + 1)[0] <= k &&
+#                 Math.abs(x - bucket.get(bkt + 1)[1]) <= t)
+#                 return true;
+
+#             bucket.put(bkt, new long[]{i, x});
+#         }
+
+#         return false;
+#     }
+# }
