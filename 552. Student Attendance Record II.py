@@ -59,3 +59,27 @@ public:
 
 
 #in java
+class Solution {
+    private final int MOD = 1_000_000_007;
+    private int[][][] memo;
+
+    public int checkRecord(int n) {
+        memo = new int[n][2][3];
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < 2; j++)
+                Arrays.fill(memo[i][j], -1);
+        return dfs(0, 0, 0, n);
+    }
+
+    private int dfs(int day, int a_count, int l_count, int n) {
+        if(day == n) return 1;
+        if(memo[day][a_count][l_count] != -1) return memo[day][a_count][l_count];
+
+        int res = 0;
+        if(a_count == 0) res = (res + dfs(day + 1, 1, 0, n)) % MOD;
+        if(l_count < 2) res = (res + dfs(day + 1, a_count, l_count + 1, n)) % MOD;
+        res = (res + dfs(day + 1, a_count, 0, n)) % MOD;
+
+        return memo[day][a_count][l_count] = res;
+    }
+}
