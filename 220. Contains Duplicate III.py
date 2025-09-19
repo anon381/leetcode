@@ -11,3 +11,40 @@ class Solution:
         return False 
 
 #in cpp
+# #include <unordered_map>
+# #include <cmath>
+# #include <vector>
+# using namespace std;
+
+# class Solution {
+# public:
+#     bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
+#         if (t < 0) return false;
+
+#         unordered_map<long long, pair<int, long long>> bucket;
+#         long long w = (long long)t + 1; // bucket size
+
+#         for (int i = 0; i < nums.size(); i++) {
+#             long long x = (long long)nums[i];
+#             long long bkt = x / w;
+#             if (x < 0) bkt--; // handle negatives properly
+
+#             // Check same bucket
+#             if (bucket.count(bkt) && i - bucket[bkt].first <= k)
+#                 return true;
+
+#             // Check neighbor bucket
+#             if (bucket.count(bkt - 1) && i - bucket[bkt - 1].first <= k &&
+#                 abs(x - bucket[bkt - 1].second) <= t)
+#                 return true;
+
+#             if (bucket.count(bkt + 1) && i - bucket[bkt + 1].first <= k &&
+#                 abs(x - bucket[bkt + 1].second) <= t)
+#                 return true;
+
+#             bucket[bkt] = {i, x};
+#         }
+
+#         return false;
+#     }
+# };
