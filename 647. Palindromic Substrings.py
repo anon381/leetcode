@@ -20,3 +20,5 @@ class Solution:
             res += count_palindrome(s, i, i + 1)
         
         return res
+
+#in cpp
