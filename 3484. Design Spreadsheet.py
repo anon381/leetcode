@@ -18,3 +18,6 @@ class Spreadsheet(object):
                 right = self.mpp.get(s2, 0) if s2[0].isupper() else int(s2)
                 return left + right
         return 0
+
+
+#in cpp
