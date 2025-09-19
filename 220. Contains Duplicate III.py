@@ -1,5 +1,5 @@
 # Time Complexity: O(n) average case
-
+# Space Complexity: O(min(n, k))
 class Solution:
     def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
         if t < 0: return False
