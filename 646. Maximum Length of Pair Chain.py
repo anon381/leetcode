@@ -12,3 +12,5 @@ class Solution:
                 prev = cur
 
         return res
+
+#in cpp
