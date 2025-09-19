@@ -1,4 +1,7 @@
  # Complexity
+# Time Complexity O(n⋅2n)
+
+
 class Solution:
     def canPartitionKSubsets(self, nums: List[int], k: int) -> bool:
         def backtrack(i, used, cursum):
