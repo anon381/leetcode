@@ -1,5 +1,7 @@
 #Complexity
 # Time complexity: O(n^2)
+# Space complexity: O(1)
+
 class Solution:
     def countSubstrings(self, s: str) -> int:        
         res = 0
