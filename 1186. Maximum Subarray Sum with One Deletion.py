@@ -1,7 +1,7 @@
 
 #Complexity
-Time complexity: O(N)
-Space complexity: O(N)
+# Time complexity: O(N)
+# Space complexity: O(N)
 
 class Solution:
     def maximumSum(self, arr: List[int]) -> int:
