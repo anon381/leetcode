@@ -13,6 +13,7 @@ class Solution:
 
         return res
 
+
 #in cpp
 class Solution {
 public:
@@ -35,3 +36,5 @@ public:
         return res;        
     }
 };
+
+#in java
