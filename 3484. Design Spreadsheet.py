@@ -1,6 +1,10 @@
 # Space:
-
 # O(N + L) 
+
+# Time per operation:
+# setCell → O(1)
+# resetCell → O(1)
+# getValue → O(L)
 
 class Spreadsheet(object):
 
