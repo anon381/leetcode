@@ -2,6 +2,10 @@
 # 𝑂(𝑛)
 #  (because memoization ensures each state is computed only once)
 
+# Space Complexity: 
+# 𝑂(𝑛)
+# O(n) for memoization + recursion stack 𝑂(𝑛)O(n) → 𝑂(𝑛)O(n) total
+
 class Solution:
     def checkRecord(self, n: int) -> int:
         temp: list[list[list[int]]] = [
