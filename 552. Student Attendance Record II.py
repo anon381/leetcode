@@ -21,4 +21,37 @@ class Solution:
         return check_all_records(0, 0, 0)
 
 
+
+
 #in cpp
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int checkRecord(int n) {
+        const int MOD = 1e9 + 7;
+        // temp[cur_ind][count_a][count_l]
+        vector<vector<vector<int>>> memo(n, vector<vector<int>>(2, vector<int>(3, -1)));
+
+        function<int(int, int, int)> dfs = [&](int day, int a_count, int l_count) -> int {
+            if(day == n) return 1;
+            if(memo[day][a_count][l_count] != -1) return memo[day][a_count][l_count];
+
+            int res = 0;
+            // Add 'A'
+            if(a_count == 0) res = (res + dfs(day+1, 1, 0)) % MOD;
+            // Add 'L'
+            if(l_count < 2) res = (res + dfs(day+1, a_count, l_count+1)) % MOD;
+            // Add 'P'
+            res = (res + dfs(day+1, a_count, 0)) % MOD;
+
+            return memo[day][a_count][l_count] = res;
+        };
+
+        return dfs(0, 0, 0);
+    }
+};
