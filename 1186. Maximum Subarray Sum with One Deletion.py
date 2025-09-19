@@ -17,6 +17,15 @@ class Solution:
             res = max(res, max(dp0[i], dp1[i]))
         return res
 
+# or
+
+class Solution:
+    def maximumSum(self, arr):
+        n = len(arr)
+        prev0, prev1 = arr[0], -10**9
+        res = arr[0]
+
+       
 
 
 
