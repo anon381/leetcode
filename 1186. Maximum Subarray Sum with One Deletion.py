@@ -47,3 +47,21 @@ public:
 
 
 #in java
+class Solution {
+    public int maximumSum(int[] arr) {
+        int n = arr.length;
+        int[] dp0 = new int[n]; // max subarray sum till index i (no deletion)
+        int[] dp1 = new int[n]; // max subarray sum till index i (one deletion)
+
+        dp0[0] = arr[0];
+        dp1[0] = (int)-1e9; // very small number
+
+        int res = arr[0];
+        for (int i = 1; i < n; i++) {
+            dp0[i] = Math.max(dp0[i - 1] + arr[i], arr[i]);
+            dp1[i] = Math.max(dp1[i - 1] + arr[i], dp0[i - 1]);
+            res = Math.max(res, Math.max(dp0[i], dp1[i]));
+        }
+        return res;
+    }
+}
