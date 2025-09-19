@@ -1,5 +1,5 @@
  # Complexity
-# Time Complexity O(n⋅2n)
+# Time Complexity O(n * 2^n)
 # Space Complexity O(n)
 
 class Solution:
