@@ -1,3 +1,7 @@
+# Time Complexity: 
+# 𝑂(𝑛)
+#  (because memoization ensures each state is computed only once)
+
 class Solution:
     def checkRecord(self, n: int) -> int:
         temp: list[list[list[int]]] = [
