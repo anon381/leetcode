@@ -48,3 +48,5 @@ class Solution:
 #         return false;
 #     }
 # };
+
+#in java
