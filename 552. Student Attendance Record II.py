@@ -19,3 +19,6 @@ class Solution:
             return total
 
         return check_all_records(0, 0, 0)
+
+
+#in cpp
