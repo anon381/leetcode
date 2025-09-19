@@ -86,4 +86,4 @@ class Solution {
 }
 
 
-#in JS
+#in JavaScript
