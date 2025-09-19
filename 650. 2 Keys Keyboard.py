@@ -18,3 +18,5 @@ class Solution:
             return min(copy_and_paste, paste_only)
         
         return 1 + find_min_steps(1, 1)
+
+#in cpp
