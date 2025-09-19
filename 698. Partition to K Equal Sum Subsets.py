@@ -1,6 +1,6 @@
  # Complexity
 # Time Complexity O(n⋅2n)
-
+# Space Complexity O(n)
 
 class Solution:
     def canPartitionKSubsets(self, nums: List[int], k: int) -> bool:
