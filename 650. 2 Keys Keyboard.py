@@ -41,3 +41,6 @@ public:
         return 1 + findMinSteps(1, 1);
     }
 };
+
+
+#in java
