@@ -1,3 +1,7 @@
+# Space:
+
+# O(N + L) 
+
 class Spreadsheet(object):
 
     def __init__(self, rows):
