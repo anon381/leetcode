@@ -1,7 +1,7 @@
 
 # Complexity
 
-Time complexity: O(2 ^n)
+# Time complexity: O(2 ^n)
 class Solution:
     def minSteps(self, n: int) -> int:
         if n == 1:
