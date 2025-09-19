@@ -1,5 +1,6 @@
 #Complexity
 # Time complexity: O(m * n)
+#Space complexity: O(n)
 
 
 class Solution:
