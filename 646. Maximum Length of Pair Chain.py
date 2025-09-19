@@ -1,5 +1,7 @@
 #complexity
 # Time complexity: O(n log n)
+#Space complexity: O(1) or could be O(n)
+
 class Solution:
     def findLongestChain(self, pairs: List[List[int]]) -> int:
         pairs.sort(key=lambda x: x[1])
