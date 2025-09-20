@@ -1,5 +1,5 @@
 # Complexity
-
+Time complexity : O(Nmn)
 
 class Solution:
     def findPaths(self, m: int, n: int, N: int, x: int, y: int) -> int:
