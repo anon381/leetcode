@@ -30,6 +30,10 @@ class Solution:
 
 
 
+#in java
+
+
+
 #in cpp
 class Solution {
 public:
