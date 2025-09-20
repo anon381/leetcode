@@ -49,3 +49,6 @@ class Router:
     def _encode(self, source: int, destination: int, timestamp: int) -> int:
         # Encode uniquely into 1 number
         return (source << 40) | (destination << 20) | timestamp
+
+
+#in cpp
