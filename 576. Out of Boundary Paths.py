@@ -94,7 +94,7 @@ class Solution {
 
 
 
-#in js
+#in JavaScript
 var findPaths = function(m, n, N, x, y) {
     const M = 1000000000 + 7;
     let dp = new Array(m).fill(0).map(() => new Array(n).fill(0));
