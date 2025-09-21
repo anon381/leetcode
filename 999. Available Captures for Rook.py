@@ -1,6 +1,6 @@
 Complexity
-Time O(64)
-Space O(1)
+# Time O(64)
+# Space O(1)
 
 
 class Solution:
