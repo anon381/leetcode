@@ -36,3 +36,61 @@ class Solution:
             start = pos
 
         return ans
+
+
+
+#in cpp
+
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    int cutOffTree(vector<vector<int>>& forest) {
+        int m = forest.size(), n = forest[0].size();
+        vector<pair<int, pair<int,int>>> trees;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (forest[i][j] > 1) {
+                    trees.push_back({forest[i][j], {i, j}});
+                }
+            }
+        }
+        sort(trees.begin(), trees.end());
+        auto bfs = [&](pair<int,int> start, pair<int,int> end) -> int {
+            if (start == end) return 0;
+            queue<pair<int,int>> q;
+            q.push(start);
+            vector<vector<bool>> visited(m, vector<bool>(n, false));
+            visited[start.first][start.second] = true;
+            int steps = 0;
+            vector<int> dirs = {0,1,0,-1,0};
+            while (!q.empty()) {
+                int sz = q.size();
+                while (sz--) {
+                    auto [r,c] = q.front(); q.pop();
+                    if (make_pair(r,c) == end) return steps;
+                    for (int k = 0; k < 4; k++) {
+                        int R = r + dirs[k], C = c + dirs[k+1];
+                        if (R >= 0 && R < m && C >= 0 && C < n && 
+                            !visited[R][C] && forest[R][C] != 0) {
+                            visited[R][C] = true;
+                            q.push({R,C});
+                        }
+                    }
+                }
+                steps++;
+            }
+            return -1;
+        };
+        int ans = 0;
+        pair<int,int> start = {0,0};
+        for (auto& t : trees) {
+            auto [height, pos] = t;
+            int dist = bfs(start, pos);
+            if (dist < 0) return -1;
+            ans += dist;
+            start = pos;
+        }
+        return ans;
+    }
+};
