@@ -44,3 +44,28 @@ public:
 
 
 #in java
+import java.util.*;
+class Solution {
+    public void duplicateZeros(int[] arr) {
+        int n = arr.length;
+        int zeroes = 0;
+
+        // count zeros
+        for (int x : arr) {
+            if (x == 0) zeroes++;
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (i + zeroes < n) {
+                arr[i + zeroes] = arr[i];
+            }
+            if (arr[i] == 0) {
+                zeroes--;
+                if (i + zeroes < n) {
+                    arr[i + zeroes] = 0;
+                }
+            }
+        }
+    }
+}
+
