@@ -1,5 +1,5 @@
 Complexity
-
+Time complexity = O(n)
 class Solution:
     def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
         count = [0] * 100
