@@ -12,3 +12,6 @@ class Solution:
             res += count[val]
             count[val] += 1
         return res
+
+
+#in cpp
