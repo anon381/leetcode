@@ -18,6 +18,8 @@ class Solution:
                 x, y = x + i, y + j
         return res
 
+
+
 #in cpp
 class Solution {
 public:
@@ -39,3 +41,6 @@ public:
         return res;
     }
 };
+
+
+#in java
