@@ -1,5 +1,5 @@
 Complexity
-
+Time Complexity = 𝑂(𝑇⋅𝑚⋅𝑛 + 𝑇log⁡𝑇)
 class Solution:
 
     def cutOffTree(self, forest: List[List[int]]) -> int:
