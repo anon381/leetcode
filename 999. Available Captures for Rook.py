@@ -17,3 +17,5 @@ class Solution:
                 if board[x][y] != '.': break
                 x, y = x + i, y + j
         return res
+
+#in cpp
