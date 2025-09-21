@@ -1,3 +1,5 @@
+Complexity
+
 class Solution:
     def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
         count = [0] * 100
