@@ -94,3 +94,83 @@ public:
         return ans;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#in java
+import java.util.*;
+
+class Solution {
+    public int cutOffTree(List<List<Integer>> forest) {
+        int m = forest.size(), n = forest.get(0).size();
+        List<int[]> trees = new ArrayList<>();
+
+        // Collect all trees (value > 1)
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int h = forest.get(i).get(j);
+                if (h > 1) trees.add(new int[]{h, i, j});
+            }
+        }
+
+        // Sort by height
+        trees.sort(Comparator.comparingInt(a -> a[0]));
+
+        int ans = 0;
+        int[] start = {0, 0};
+
+        for (int[] t : trees) {
+            int[] target = {t[1], t[2]};
+            int dist = bfs(forest, start, target);
+            if (dist < 0) return -1;
+            ans += dist;
+            start = target;
+        }
+        return ans;
+    }
+
+    private int bfs(List<List<Integer>> forest, int[] start, int[] end) {
+        if (start[0] == end[0] && start[1] == end[1]) return 0;
+
+        int m = forest.size(), n = forest.get(0).size();
+        boolean[][] visited = new boolean[m][n];
+        Queue<int[]> q = new LinkedList<>();
+        q.add(start);
+        visited[start[0]][start[1]] = true;
+
+        int steps = 0;
+        int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};
+
+        while (!q.isEmpty()) {
+            int sz = q.size();
+            while (sz-- > 0) {
+                int[] cur = q.poll();
+                int r = cur[0], c = cur[1];
+                if (r == end[0] && c == end[1]) return steps;
+
+                for (int[] d : dirs) {
+                    int R = r + d[0], C = c + d[1];
+                    if (R >= 0 && R < m && C >= 0 && C < n &&
+                        !visited[R][C] && forest.get(R).get(C) != 0) {
+                        visited[R][C] = true;
+                        q.add(new int[]{R, C});
+                    }
+                }
+            }
+            steps++;
+        }
+        return -1;
+    }
+}
