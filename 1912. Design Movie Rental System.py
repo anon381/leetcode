@@ -1,4 +1,7 @@
-Complexity
+# Complexity
+# Time complexity: O(E log E + Q log E)
+# where Q = number of operations performed.
+# Space complexity: O(E)
 
 class MovieRentingSystem:
     def __init__(self, n: int, entries: List[List[int]]):
