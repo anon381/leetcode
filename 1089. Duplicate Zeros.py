@@ -1,6 +1,7 @@
 Complexity
-Time Complexity =  O(n)
-Space Complexity = O(1)
+# Time Complexity =  O(n)
+# Space Complexity = O(1)
+
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
         """
