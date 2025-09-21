@@ -1,5 +1,5 @@
 Complexity
-
+Time O(64)
 
 class Solution:
     def numRookCaptures(self, board: List[List[str]]) -> int:
