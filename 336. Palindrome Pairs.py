@@ -1,5 +1,5 @@
 #  Time Complexity = O(n·k²)
-Space Complexity
+# Space Complexity  = Space = O(n·k + n²)
 
 class Solution:
     def palindromePairs(self, words: List[str]) -> List[List[int]]:
