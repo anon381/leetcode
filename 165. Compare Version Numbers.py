@@ -13,3 +13,4 @@ class Solution:
             return 1 if any(int(V1[i])>0 for i in range(n3, n1)) else 0
         return 0
         
+#in cpp
