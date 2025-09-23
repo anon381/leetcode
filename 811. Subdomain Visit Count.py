@@ -8,3 +8,5 @@ class Solution:
                 if s[i] == '.':
                     count[s[i + 1:]] += int(n)
         return ["%d %s" % (count[k], k) for k in count]
+
+#in cpp
