@@ -47,3 +47,31 @@ public:
 
 
 #in java
+class Solution {
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> map = new HashMap<>();
+
+        // Step 1: Count frequencies
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+
+        // Step 2: Transfer to list and sort
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
+
+        list.sort((a, b) -> {
+            if (!a.getValue().equals(b.getValue())) {
+                return b.getValue() - a.getValue(); // frequency descending
+            }
+            return a.getKey().compareTo(b.getKey()); // lexicographically ascending
+        });
+
+        // Step 3: Collect top k
+        List<String> res = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            res.add(list.get(i).getKey());
+        }
+
+        return res;
+    }
+}
