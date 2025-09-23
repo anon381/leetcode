@@ -1,6 +1,8 @@
 
 Complexity
 Time Complexity: O(nlogn)
+Space Complexity: O(n)
+
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         from collections import Counter
