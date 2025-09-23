@@ -21,3 +21,5 @@ class Solution:
                     res.append([i, backward[word[:j]]])
                     
         return res
+
+#in cpp
