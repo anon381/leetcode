@@ -1,5 +1,4 @@
-#  Time Complexity
-
+#  Time Complexity = O(n·k²)
 class Solution:
     def palindromePairs(self, words: List[str]) -> List[List[int]]:
         backward, res = {}, []
