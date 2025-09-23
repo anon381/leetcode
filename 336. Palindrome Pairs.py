@@ -87,3 +87,53 @@ private:
 
 
 #in java
+import java.util.*;
+
+class Solution {
+    public List<List<Integer>> palindromePairs(String[] words) {
+        Map<String, Integer> backward = new HashMap<>();
+        List<List<Integer>> res = new ArrayList<>();
+
+        // Store reversed words
+        for (int i = 0; i < words.length; i++) {
+            backward.put(new StringBuilder(words[i]).reverse().toString(), i);
+        }
+
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+
+            // Case 1: Direct reverse match
+            if (backward.containsKey(word) && backward.get(word) != i) {
+                res.add(Arrays.asList(i, backward.get(word)));
+            }
+
+            // Case 2: Empty string + palindrome word
+            if (!word.isEmpty() && backward.containsKey("") && isPalindrome(word)) {
+                res.add(Arrays.asList(i, backward.get("")));
+                res.add(Arrays.asList(backward.get(""), i));
+            }
+
+            // Case 3: Prefix/suffix palindrome splits
+            for (int j = 0; j < word.length(); j++) {
+                // If suffix is a reversed word and prefix is palindrome
+                if (backward.containsKey(word.substring(j)) && isPalindrome(word.substring(0, j))) {
+                    res.add(Arrays.asList(backward.get(word.substring(j)), i));
+                }
+                // If prefix is a reversed word and suffix is palindrome
+                if (backward.containsKey(word.substring(0, j)) && isPalindrome(word.substring(j))) {
+                    res.add(Arrays.asList(i, backward.get(word.substring(0, j))));
+                }
+            }
+        }
+        return res;
+    }
+
+    private boolean isPalindrome(String s) {
+        int l = 0, r = s.length() - 1;
+        while (l < r) {
+            if (s.charAt(l++) != s.charAt(r--)) return false;
+        }
+        return true;
+    }
+}
+
