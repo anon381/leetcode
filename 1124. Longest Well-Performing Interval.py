@@ -10,3 +10,5 @@ class Solution:
             if score - 1 in seen:
                 res = max(res, i - seen[score - 1])
         return res
+
+#in cpp
