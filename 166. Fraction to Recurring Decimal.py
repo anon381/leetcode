@@ -68,3 +68,12 @@ public:
         return fraction;
     }
 };
+
+
+
+
+
+
+
+
+#in java
