@@ -1,6 +1,6 @@
 Complexity
-Time complexity: O(N)
-Space complexity: O(1)
+# Time complexity: O(N)
+# Space complexity: O(1)
 
 class Solution:
     def alphabetBoardPath(self, target: str) -> str:
