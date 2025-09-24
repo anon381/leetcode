@@ -1,4 +1,6 @@
 Complexity
+Time complexity: O(N)
+
 
 class Solution:
     def alphabetBoardPath(self, target: str) -> str:
