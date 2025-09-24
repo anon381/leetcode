@@ -27,3 +27,6 @@ public:
         return res;
     }
 };
+
+
+#in java
