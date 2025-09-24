@@ -1,4 +1,6 @@
 Complexity Analysis
+Time complexity: O(n)
+
 class Solution:
     def delNodes(self, root: Optional[TreeNode], to_delete: list[int]) -> list[TreeNode]:
         res: dict[int, TreeNode] = {root.val: root}
