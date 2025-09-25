@@ -5,3 +5,5 @@ class Solution:
             for j in range(len(tri[i])):
                 tri[i][j] += min(tri[i + 1][j], tri[i + 1][j + 1])
         return tri[0][0]
+
+# in cpp
