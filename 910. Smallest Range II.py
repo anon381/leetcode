@@ -7,3 +7,5 @@ class Solution:
             small = min(A[i + 1], A[0] + 2 * K)
             res = min(res, big - small)
         return res
+
+#in java
