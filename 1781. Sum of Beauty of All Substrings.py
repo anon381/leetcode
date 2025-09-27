@@ -1,6 +1,6 @@
-Complexity
-Time complexity: O(n ^ 2)
-Space complexity: O(1)
+# Complexity
+# Time complexity: O(n ^ 2)
+# Space complexity: O(1)
 
 class Solution:
     def beautySum(self, s: str) -> int:
