@@ -1,3 +1,6 @@
+Complexity
+
+
 class Solution:
     def beautySum(self, s: str) -> int:
         total_beauty = 0
