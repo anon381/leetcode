@@ -22,3 +22,4 @@ AS (
 SELECT player_id
 	,event_date AS first_login
 FROM RankedLogins
+WHERE rn = 1;
