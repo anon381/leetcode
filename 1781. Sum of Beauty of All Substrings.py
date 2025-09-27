@@ -1,5 +1,5 @@
 Complexity
-
+Time complexity: O(n ^ 2)
 
 class Solution:
     def beautySum(self, s: str) -> int:
