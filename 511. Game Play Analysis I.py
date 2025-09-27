@@ -10,3 +10,15 @@ FROM Activity
 GROUP BY player_id;
 
 # or
+WITH RankedLogins
+AS (
+	SELECT player_id
+		,event_date
+		,ROW_NUMBER() OVER (
+			PARTITION BY player_id ORDER BY event_date
+			) AS rn
+	FROM Activity
+	)
+SELECT player_id
+	,event_date AS first_login
+FROM RankedLogins
