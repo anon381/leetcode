@@ -29,3 +29,8 @@ class Solution:
 
         return res[::-1]
 
+
+if __name__ == "__main__":
+    print(Solution().addNegabinary([1,1,1,1,1], [1,0,1]))  # -> [1,0,0,0,0]
+    print(Solution().addNegabinary([0], [0]))              # -> [0]
+    print(Solution().addNegabinary([0], [1]))              # -> [1]
