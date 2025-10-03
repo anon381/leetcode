@@ -1,3 +1,10 @@
+Complexity
+Time complexity:
+O(mnlog(mn))
+
+Space complexity:
+O(mn)
+
 class Solution:
     def trapRainWater(self, height: List[List[int]]) -> int:
         dir = (0, 1, 0, -1, 0)
