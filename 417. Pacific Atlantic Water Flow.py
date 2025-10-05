@@ -1,5 +1,6 @@
 
 
+from collections import deque
 class Solution:
     def pacificAtlantic(self, heights):
         if not heights or not heights[0]:
