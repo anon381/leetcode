@@ -1,4 +1,5 @@
-
+Time complexity:
+O(m×n)
 
 from collections import deque
 class Solution:
