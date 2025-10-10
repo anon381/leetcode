@@ -1,4 +1,8 @@
+Complexity:
 
+Time: O(1)
+
+Space: O(1)
 class Solution:
     def nthPersonGetsNthSeat(self, n: int) -> float:
         return 1.0 if n == 1 else 0.5
