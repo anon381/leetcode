@@ -14,3 +14,24 @@ class Solution:
 
 
 
+#in cpp
+
+class Solution {
+public:
+    vector<int> minSubsequence(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int total = accumulate(nums.begin(), nums.end(), 0);
+        reverse(nums.begin(), nums.end());
+        
+        int curr = 0;
+        int count = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            curr += nums[i];
+            if (curr > total - curr) {
+                count = i;
+                break;
+            }
+        }
+        return vector<int>(nums.begin(), nums.begin() + count + 1);
+    }
+};
