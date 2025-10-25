@@ -35,3 +35,25 @@ public:
         return vector<int>(nums.begin(), nums.begin() + count + 1);
     }
 };
+
+
+#in java
+
+class Solution {
+    public List<Integer> minSubsequence(int[] nums) {
+        Arrays.sort(nums);
+        int total = 0;
+        for (int n : nums) total += n;
+        
+        List<Integer> list = new ArrayList<>();
+        int curr = 0;
+        
+        for (int i = nums.length - 1; i >= 0; i--) {
+            curr += nums[i];
+            list.add(nums[i]);
+            if (curr > total - curr) break;
+        }
+        
+        return list;
+    }
+}
