@@ -1,3 +1,7 @@
+Complexity
+Time complexity: O(nlogn)
+Space complexity: O(1)
+
 class Solution:
     def minSubsequence(self, nums: List[int]) -> List[int]:
         nums.sort()
