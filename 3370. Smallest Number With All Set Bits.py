@@ -1,4 +1,9 @@
+omplexity
+Time complexity:
+O(1)∼O(logn)
 
+Space complexity:
+O(1)
 class Solution:
     def smallestNumber(self, n: int) -> int:
         return (1<<(1+int(log2(n))))-1
