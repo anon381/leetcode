@@ -1,3 +1,7 @@
+Complexity
+Time Complexity : O(N∗X∗Log(N))
+Space Complexity : O(N)
+
 class Solution:
     def findXSum(self, nums, k, x):
         n = len(nums)
